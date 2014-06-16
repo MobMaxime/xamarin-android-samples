@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <Button
+        android:id="@+id/button_open"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/open"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+    <AnimationDrawer.MultiDirectionSlidingDrawer xmlns:my="http://schemas.android.com/apk/res/AnimationDrawer.AnimationDrawer"
+        android:id="@+id/drawer"
+        my:direction="topToBottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        my:handle="@+id/handle"
+        my:content="@+id/content">
+        <include
+            android:id="@id/content"
+            layout="@layout/pen_content" />
+        <ImageView
+            android:id="@id/handle"
+            android:layout_width="wrap_content"
+            android:layout_height="40px"
+            android:src="@drawable/sliding_drawer_handle_bottom" />
+    </AnimationDrawer.MultiDirectionSlidingDrawer>
+</RelativeLayout>

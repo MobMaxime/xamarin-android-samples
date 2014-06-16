@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimationDrawer", "AnimationDrawer\AnimationDrawer.csproj", "{E9F88B6C-F60D-4969-980C-D0ECB8D7A916}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9F88B6C-F60D-4969-980C-D0ECB8D7A916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9F88B6C-F60D-4969-980C-D0ECB8D7A916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9F88B6C-F60D-4969-980C-D0ECB8D7A916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9F88B6C-F60D-4969-980C-D0ECB8D7A916}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = AnimationDrawer\AnimationDrawer.csproj
+	EndGlobalSection
+EndGlobal
