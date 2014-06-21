@@ -37,17 +37,7 @@ namespace AnimationDrawer
 					mDrawer.animateOpen();
 			}; 
 		}
-
-
-
-//		public override void OnContentChanged ()
-//		{
-//			base.OnContentChanged ();
-//			mCloseButton = (Button) FindViewById( Resource.Id.button_close );
-//			mOpenButton = (Button) FindViewById( Resource.Id.button_open );
-//			mDrawer = (MultiDirectionSlidingDrawer) FindViewById( Resource.Id.drawer );
-//		}
-
+		  
 	}
 }
 
