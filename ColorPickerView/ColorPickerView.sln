@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorPicker", "ColorPicker\ColorPicker.csproj", "{28074F04-2436-4489-977D-6F4CC5775406}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorPickerViewDemo", "ColorPickerViewDemo\ColorPickerViewDemo.csproj", "{21992B4A-BE53-4F63-985B-5C270F940B74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21992B4A-BE53-4F63-985B-5C270F940B74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21992B4A-BE53-4F63-985B-5C270F940B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21992B4A-BE53-4F63-985B-5C270F940B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21992B4A-BE53-4F63-985B-5C270F940B74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28074F04-2436-4489-977D-6F4CC5775406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28074F04-2436-4489-977D-6F4CC5775406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28074F04-2436-4489-977D-6F4CC5775406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28074F04-2436-4489-977D-6F4CC5775406}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ColorPickerViewDemo\ColorPickerViewDemo.csproj
+	EndGlobalSection
+EndGlobal

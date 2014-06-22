@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="library_name">ColorPicker</string>
+ 	<string name="dialog_title">Dialog</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancle">Cancle</string>
+</resources>

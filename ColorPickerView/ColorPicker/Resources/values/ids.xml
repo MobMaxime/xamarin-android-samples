@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <item type="id" name="color_picker_view" />
+    <item type="id" name="color_panel_old" />
+    <item type="id" name="color_panel_new" />
+    <item type="id" name="preference_preview_color_panel" />
+    <item type="id" name="dialog_color_picker_extra_layout_landscape" />
+    
+</resources>
