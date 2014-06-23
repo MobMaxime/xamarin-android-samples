@@ -25,9 +25,9 @@ namespace ColorPicker
 
 		private float mDensity = 1f;
 
-		private int mBorderColor = Convert.ToInt32 ("4285427310");
-		private int mColor = Convert.ToInt32 ("4278190080");
-
+		private int mBorderColor = Int32.Parse("ff6E6E6E", System.Globalization.NumberStyles.HexNumber);//Convert.ToInt32 ("4285427310");
+		private int mColor = Int32.Parse("ff000000", System.Globalization.NumberStyles.HexNumber);//Convert.ToInt32 ("4278190080");
+		  
 		private Paint		mBorderPaint;
 		private Paint		mColorPaint;
 

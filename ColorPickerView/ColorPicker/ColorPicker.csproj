@@ -59,6 +59,7 @@
     <AndroidResource Include="Resources\values\attrs.xml" />
     <AndroidResource Include="Resources\layout\dialog_color_picker.axml" />
     <AndroidResource Include="Resources\layout\preference_preview_layout.axml" />
+    <AndroidResource Include="Resources\values\color.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

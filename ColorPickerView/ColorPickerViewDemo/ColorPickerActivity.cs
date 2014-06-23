@@ -33,13 +33,13 @@ namespace ColorPickerViewDemo
 
 			SetContentView(Resource.Layout.Main);
 
-			init();
+//			init();
 		}
 
 		private void init() {
 
 			var prefs = PreferenceManager.GetDefaultSharedPreferences (this);
-			int initialColor = prefs.GetInt("color_3", Convert.ToInt32("4278190080"));
+			int initialColor = prefs.GetInt ("color_3", 1);//Convert.ToInt32("4278190080"));
 
 			mColorPickerView = (ColorPickerView) FindViewById(Resource.Id.color_picker_view);
 			mOldColorPanelView = (ColorPanelView) FindViewById(Resource.Id.color_panel_old);
@@ -48,11 +48,12 @@ namespace ColorPickerViewDemo
 			mOkButton = (Button) FindViewById(Resource.Id.okButton);
 			mCancelButton = (Button) FindViewById(Resource.Id.cancelButton);
 
-
 			((LinearLayout) mOldColorPanelView.Parent).SetPadding(
-				(int)Math.Round(mColorPickerView.getDrawingOffset()), 0, 
-				(int)Math.Round(mColorPickerView.getDrawingOffset()), 0);
-
+				(int)Math.Round(mColorPickerView.getDrawingOffset()), 
+				0, 
+				(int)Math.Round(mColorPickerView.getDrawingOffset()), 
+				0);
+			 
 
 			mColorPickerView.setOnColorChangedListener(this);
 			mColorPickerView.setColor(initialColor, true);

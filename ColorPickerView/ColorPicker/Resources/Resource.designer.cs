@@ -55,23 +55,87 @@ namespace ColorPicker
 			}
 		}
 		
+		public partial class Color
+		{
+			
+			// aapt resource value: 0x7f030009
+			public static int aqua = 2130903049;
+			
+			// aapt resource value: 0x7f03000f
+			public static int black = 2130903055;
+			
+			// aapt resource value: 0x7f03000d
+			public static int blue = 2130903053;
+			
+			// aapt resource value: 0x7f030010
+			public static int def = 2130903056;
+			
+			// aapt resource value: 0x7f030002
+			public static int fuchsia = 2130903042;
+			
+			// aapt resource value: 0x7f030005
+			public static int gray = 2130903045;
+			
+			// aapt resource value: 0x7f03000c
+			public static int green = 2130903052;
+			
+			// aapt resource value: 0x7f03000a
+			public static int lime = 2130903050;
+			
+			// aapt resource value: 0x7f030008
+			public static int maroon = 2130903048;
+			
+			// aapt resource value: 0x7f03000e
+			public static int navy = 2130903054;
+			
+			// aapt resource value: 0x7f030006
+			public static int olive = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public static int purple = 2130903047;
+			
+			// aapt resource value: 0x7f030003
+			public static int red = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public static int silver = 2130903044;
+			
+			// aapt resource value: 0x7f03000b
+			public static int teal = 2130903051;
+			
+			// aapt resource value: 0x7f030000
+			public static int white = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public static int yellow = 2130903041;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f030002
-			public static int color_panel_new = 2130903042;
+			// aapt resource value: 0x7f040002
+			public static int color_panel_new = 2130968578;
 			
-			// aapt resource value: 0x7f030001
-			public static int color_panel_old = 2130903041;
+			// aapt resource value: 0x7f040001
+			public static int color_panel_old = 2130968577;
 			
-			// aapt resource value: 0x7f030000
-			public static int color_picker_view = 2130903040;
+			// aapt resource value: 0x7f040000
+			public static int color_picker_view = 2130968576;
 			
-			// aapt resource value: 0x7f030004
-			public static int dialog_color_picker_extra_layout_landscape = 2130903044;
+			// aapt resource value: 0x7f040004
+			public static int dialog_color_picker_extra_layout_landscape = 2130968580;
 			
-			// aapt resource value: 0x7f030003
-			public static int preference_preview_color_panel = 2130903043;
+			// aapt resource value: 0x7f040003
+			public static int preference_preview_color_panel = 2130968579;
 			
 			static Id()
 			{
@@ -105,17 +169,17 @@ namespace ColorPicker
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040003
-			public static int dialog_cancle = 2130968579;
+			// aapt resource value: 0x7f050003
+			public static int dialog_cancle = 2131034115;
 			
-			// aapt resource value: 0x7f040002
-			public static int dialog_ok = 2130968578;
+			// aapt resource value: 0x7f050002
+			public static int dialog_ok = 2131034114;
 			
-			// aapt resource value: 0x7f040001
-			public static int dialog_title = 2130968577;
+			// aapt resource value: 0x7f050001
+			public static int dialog_title = 2131034113;
 			
-			// aapt resource value: 0x7f040000
-			public static int library_name = 2130968576;
+			// aapt resource value: 0x7f050000
+			public static int library_name = 2131034112;
 			
 			static String()
 			{
@@ -130,8 +194,8 @@ namespace ColorPicker
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f050000
-			public static int dialog_color_pciker_view_portrait = 2131034112;
+			// aapt resource value: 0x7f060000
+			public static int dialog_color_pciker_view_portrait = 2131099648;
 			
 			static Style()
 			{

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:picker="http://schemas.android.com/apk/res/ColorPickerViewDemo.ColorPickerViewDemo"
+    xmlns:picker="http://schemas.android.com/apk/res/colorpickerviewdemo.colorpickerviewdemo"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
@@ -9,7 +9,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:padding="16dp">
-        <ColorPickerViewDemo.ColorPickerView
+        <ColorPicker.ColorPickerView
             android:id="@id/color_picker_view"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
             android:layout_below="@id/color_picker_view"
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
-            <ColorPickerViewDemo.ColorPanelView
+            <ColorPicker.ColorPanelView
                 android:id="@id/color_panel_old"
                 android:layout_width="0px"
                 android:layout_height="fill_parent"
@@ -36,7 +36,7 @@
                 android:text="→"
                 android:textColor="#ffffff"
                 android:textSize="20sp" />
-            <ColorPickerViewDemo.ColorPanelView
+            <ColorPicker.ColorPanelView
                 android:id="@id/color_panel_new"
                 android:layout_width="0px"
                 android:layout_height="fill_parent"

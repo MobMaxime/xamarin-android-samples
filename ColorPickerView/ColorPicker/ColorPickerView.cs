@@ -25,7 +25,7 @@ namespace ColorPicker
 		/**
 	 * The width in pixels of the border 
 	 * surrounding all color panels.
-	 */
+	 */	
 		private  static float	BORDER_WIDTH_PX = 1;
 
 		/**
@@ -86,8 +86,8 @@ namespace ColorPicker
 		private float 		mVal = 0f;
 
 		private String		mAlphaSliderText = null;
-		private int mSliderTrackerColor = Convert.ToInt32("4280032284");
-		private int mBorderColor = Convert.ToInt32 ("4285427310");
+		private int mSliderTrackerColor = Int32.Parse("FFBDBDBD", System.Globalization.NumberStyles.HexNumber);//Convert.ToInt32("4280032284");
+		private int mBorderColor = Int32.Parse("FF6E6E6E", System.Globalization.NumberStyles.HexNumber);//Convert.ToInt32 ("4285427310");
 		private Boolean		mShowAlphaPanel = false;
 
 		/*
@@ -130,6 +130,7 @@ namespace ColorPicker
 
 		public ColorPickerView (Context context, IAttributeSet attrs) : base (context, attrs)
 		{
+			Initialize (attrs);
  		}
 
 		public ColorPickerView (Context context, IAttributeSet attrs, int defStyle) :base (context, attrs, defStyle)
@@ -143,8 +144,8 @@ namespace ColorPicker
 			TypedArray a = Context.ObtainStyledAttributes (attrs, Resource.Styleable.ColorPickerView);
 			mShowAlphaPanel = a.GetBoolean(Resource.Styleable.ColorPickerView_alphaChannelVisible, false);
 			mAlphaSliderText = a.GetString(Resource.Styleable.ColorPickerView_alphaChannelText);		
-			mSliderTrackerColor = a.GetColor(Resource.Styleable.ColorPickerView_colorPickerSliderColor,Convert.ToInt32("4290624957"));
-			mBorderColor = a.GetColor(Resource.Styleable.ColorPickerView_colorPickerBorderColor, Convert.ToInt32("4285427310"));
+			mSliderTrackerColor = a.GetColor(Resource.Styleable.ColorPickerView_colorPickerSliderColor,Int32.Parse("FFBDBDBD", System.Globalization.NumberStyles.HexNumber));
+			mBorderColor = a.GetColor(Resource.Styleable.ColorPickerView_colorPickerBorderColor, Int32.Parse("FF6E6E6E", System.Globalization.NumberStyles.HexNumber));
 			a.Recycle();
 
 
@@ -239,7 +240,8 @@ namespace ColorPicker
 			if(BORDER_WIDTH_PX > 0){	
 				byte[] byteArr = BitConverter.GetBytes (mBorderColor);
 				mBorderPaint.Color = Color.Argb (byteArr [0], byteArr [1], byteArr [2], byteArr [3]);
-//				mBorderPaint.Color = mBorderColor;
+				//mBorderPaint.Color = mBorderColor;
+ 
 				canvas.DrawRect(mDrawingRect.Left, mDrawingRect.Top, rect.Right + BORDER_WIDTH_PX, rect.Bottom + BORDER_WIDTH_PX, mBorderPaint);		
 			}
 

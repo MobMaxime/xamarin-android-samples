@@ -32,6 +32,23 @@ namespace ColorPickerViewDemo
 			global::ColorPicker.Resource.Attribute.colorPickerSliderColor = global::ColorPickerViewDemo.Resource.Attribute.colorPickerSliderColor;
 			global::ColorPicker.Resource.Attribute.showDialogTitle = global::ColorPickerViewDemo.Resource.Attribute.showDialogTitle;
 			global::ColorPicker.Resource.Attribute.showSelectedColorInList = global::ColorPickerViewDemo.Resource.Attribute.showSelectedColorInList;
+			global::ColorPicker.Resource.Color.aqua = global::ColorPickerViewDemo.Resource.Color.aqua;
+			global::ColorPicker.Resource.Color.black = global::ColorPickerViewDemo.Resource.Color.black;
+			global::ColorPicker.Resource.Color.blue = global::ColorPickerViewDemo.Resource.Color.blue;
+			global::ColorPicker.Resource.Color.def = global::ColorPickerViewDemo.Resource.Color.def;
+			global::ColorPicker.Resource.Color.fuchsia = global::ColorPickerViewDemo.Resource.Color.fuchsia;
+			global::ColorPicker.Resource.Color.gray = global::ColorPickerViewDemo.Resource.Color.gray;
+			global::ColorPicker.Resource.Color.green = global::ColorPickerViewDemo.Resource.Color.green;
+			global::ColorPicker.Resource.Color.lime = global::ColorPickerViewDemo.Resource.Color.lime;
+			global::ColorPicker.Resource.Color.maroon = global::ColorPickerViewDemo.Resource.Color.maroon;
+			global::ColorPicker.Resource.Color.navy = global::ColorPickerViewDemo.Resource.Color.navy;
+			global::ColorPicker.Resource.Color.olive = global::ColorPickerViewDemo.Resource.Color.olive;
+			global::ColorPicker.Resource.Color.purple = global::ColorPickerViewDemo.Resource.Color.purple;
+			global::ColorPicker.Resource.Color.red = global::ColorPickerViewDemo.Resource.Color.red;
+			global::ColorPicker.Resource.Color.silver = global::ColorPickerViewDemo.Resource.Color.silver;
+			global::ColorPicker.Resource.Color.teal = global::ColorPickerViewDemo.Resource.Color.teal;
+			global::ColorPicker.Resource.Color.white = global::ColorPickerViewDemo.Resource.Color.white;
+			global::ColorPicker.Resource.Color.yellow = global::ColorPickerViewDemo.Resource.Color.yellow;
 			global::ColorPicker.Resource.Id.color_panel_new = global::ColorPickerViewDemo.Resource.Id.color_panel_new;
 			global::ColorPicker.Resource.Id.color_panel_old = global::ColorPickerViewDemo.Resource.Id.color_panel_old;
 			global::ColorPicker.Resource.Id.color_picker_view = global::ColorPickerViewDemo.Resource.Id.color_picker_view;
@@ -85,6 +102,70 @@ namespace ColorPickerViewDemo
 			}
 		}
 		
+		public partial class Color
+		{
+			
+			// aapt resource value: 0x7f040009
+			public const int aqua = 2130968585;
+			
+			// aapt resource value: 0x7f04000f
+			public const int black = 2130968591;
+			
+			// aapt resource value: 0x7f04000d
+			public const int blue = 2130968589;
+			
+			// aapt resource value: 0x7f040010
+			public const int def = 2130968592;
+			
+			// aapt resource value: 0x7f040002
+			public const int fuchsia = 2130968578;
+			
+			// aapt resource value: 0x7f040005
+			public const int gray = 2130968581;
+			
+			// aapt resource value: 0x7f04000c
+			public const int green = 2130968588;
+			
+			// aapt resource value: 0x7f04000a
+			public const int lime = 2130968586;
+			
+			// aapt resource value: 0x7f040008
+			public const int maroon = 2130968584;
+			
+			// aapt resource value: 0x7f04000e
+			public const int navy = 2130968590;
+			
+			// aapt resource value: 0x7f040006
+			public const int olive = 2130968582;
+			
+			// aapt resource value: 0x7f040007
+			public const int purple = 2130968583;
+			
+			// aapt resource value: 0x7f040003
+			public const int red = 2130968579;
+			
+			// aapt resource value: 0x7f040004
+			public const int silver = 2130968580;
+			
+			// aapt resource value: 0x7f04000b
+			public const int teal = 2130968587;
+			
+			// aapt resource value: 0x7f040000
+			public const int white = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int yellow = 2130968577;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
 		public partial class Drawable
 		{
 			
@@ -110,35 +191,35 @@ namespace ColorPickerViewDemo
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f040005
-			public const int buttonbar = 2130968581;
+			// aapt resource value: 0x7f050005
+			public const int buttonbar = 2131034117;
 			
-			// aapt resource value: 0x7f040007
-			public const int cancelButton = 2130968583;
+			// aapt resource value: 0x7f050007
+			public const int cancelButton = 2131034119;
 			
-			// aapt resource value: 0x7f040002
-			public const int color_panel_new = 2130968578;
+			// aapt resource value: 0x7f050002
+			public const int color_panel_new = 2131034114;
 			
-			// aapt resource value: 0x7f040001
-			public const int color_panel_old = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int color_panel_old = 2131034113;
 			
-			// aapt resource value: 0x7f040000
-			public const int color_picker_view = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int color_picker_view = 2131034112;
 			
-			// aapt resource value: 0x7f040004
-			public const int dialog_color_picker_extra_layout_landscape = 2130968580;
+			// aapt resource value: 0x7f050004
+			public const int dialog_color_picker_extra_layout_landscape = 2131034116;
 			
-			// aapt resource value: 0x7f040009
-			public const int menu_about = 2130968585;
+			// aapt resource value: 0x7f050009
+			public const int menu_about = 2131034121;
 			
-			// aapt resource value: 0x7f040008
-			public const int menu_color_picker_dialog = 2130968584;
+			// aapt resource value: 0x7f050008
+			public const int menu_color_picker_dialog = 2131034120;
 			
-			// aapt resource value: 0x7f040006
-			public const int okButton = 2130968582;
+			// aapt resource value: 0x7f050006
+			public const int okButton = 2131034118;
 			
-			// aapt resource value: 0x7f040003
-			public const int preference_preview_color_panel = 2130968579;
+			// aapt resource value: 0x7f050003
+			public const int preference_preview_color_panel = 2131034115;
 			
 			static Id()
 			{
@@ -181,8 +262,8 @@ namespace ColorPickerViewDemo
 		public partial class Menu
 		{
 			
-			// aapt resource value: 0x7f070000
-			public const int main = 2131165184;
+			// aapt resource value: 0x7f080000
+			public const int main = 2131230720;
 			
 			static Menu()
 			{
@@ -197,26 +278,26 @@ namespace ColorPickerViewDemo
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f050005
-			public const int action_settings = 2131034117;
+			// aapt resource value: 0x7f060005
+			public const int action_settings = 2131099653;
 			
-			// aapt resource value: 0x7f050004
-			public const int app_name = 2131034116;
+			// aapt resource value: 0x7f060004
+			public const int app_name = 2131099652;
 			
-			// aapt resource value: 0x7f050003
-			public const int dialog_cancle = 2131034115;
+			// aapt resource value: 0x7f060003
+			public const int dialog_cancle = 2131099651;
 			
-			// aapt resource value: 0x7f050002
-			public const int dialog_ok = 2131034114;
+			// aapt resource value: 0x7f060002
+			public const int dialog_ok = 2131099650;
 			
-			// aapt resource value: 0x7f050001
-			public const int dialog_title = 2131034113;
+			// aapt resource value: 0x7f060001
+			public const int dialog_title = 2131099649;
 			
-			// aapt resource value: 0x7f050006
-			public const int hello_world = 2131034118;
+			// aapt resource value: 0x7f060006
+			public const int hello_world = 2131099654;
 			
-			// aapt resource value: 0x7f050000
-			public const int library_name = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int library_name = 2131099648;
 			
 			static String()
 			{
@@ -231,14 +312,14 @@ namespace ColorPickerViewDemo
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f060001
-			public const int AppBaseTheme = 2131099649;
+			// aapt resource value: 0x7f070001
+			public const int AppBaseTheme = 2131165185;
 			
-			// aapt resource value: 0x7f060002
-			public const int AppTheme = 2131099650;
+			// aapt resource value: 0x7f070002
+			public const int AppTheme = 2131165186;
 			
-			// aapt resource value: 0x7f060000
-			public const int dialog_color_pciker_view_portrait = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int dialog_color_pciker_view_portrait = 2131165184;
 			
 			static Style()
 			{
