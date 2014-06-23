@@ -1,15 +1,15 @@
 SlidingMenuSharp
 ================
 
-A direct port of [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu) to C# to work with [Xamarin.Android](http://xamarin.com/monoforandroid)
+A simplified version of [SlidingMenuSharp](https://github.com/Cheesebaron/SlidingMenuSharp) (direct port of [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu for C#) to work with Xamarin.Android.
 
-TODO
-----
-* Create docs on how to use it, for now look in the samples, they should cover all aspects.
 
 Thanks to
 ---------
 * [Jeremy Feinstein](https://github.com/jfeinstein10) - The creator of [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu)
+
+---------
+* [Cheesebaron](https://github.com/Cheesebaron) - The creator of [SlidingMenuSharp](https://github.com/Cheesebaron/SlidingMenuSharp)
 
 License
 -------
