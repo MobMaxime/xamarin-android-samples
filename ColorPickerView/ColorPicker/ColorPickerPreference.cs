@@ -185,7 +185,7 @@ namespace ColorPicker
 
 		protected override void OnDialogClosed (bool positiveResult)
 		{
-			base.OnDialogClosed (positiveResult);
+			//base.OnDialogClosed (positiveResult);
 
 			if(positiveResult) {
 				mColor = mColorPickerView.getColor();
@@ -218,12 +218,12 @@ namespace ColorPicker
 			mNewColorView.setColor(newColor);
 		}
 
-		class SavedState : BaseSavedState{
+		class SavedState : BaseSavedState {
 			public int currentColor;
 
-//			public SavedState(Parcelable superState) : base(superState) {
-//				 
-//			}
+			public SavedState(IParcelable superState) : base(superState) {
+				 
+			}
 
 			public SavedState(Parcel source) : base(source) {
 				currentColor = source.ReadInt(); 
@@ -234,10 +234,6 @@ namespace ColorPicker
 				base.WriteToParcel (dest, flags);
 				dest.WriteBundle((Bundle)currentColor);
 			}
-
-			public SavedState(IParcelable superState) : base(superState) {
-
-			} 
 
 			//			public static ParcelableCreator CREATOR = new ParcelableCreator(); 
 

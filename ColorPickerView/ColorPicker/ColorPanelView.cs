@@ -85,16 +85,10 @@ namespace ColorPicker
 
 			SetMeasuredDimension(width, height);
 		}
-		protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
-			int width = MeasureSpec.GetSize(widthMeasureSpec);
-			int height = MeasureSpec.GetSize(heightMeasureSpec);
-
-			SetMeasuredDimension(width, height);
-		}
-		 
-		protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-			base.OnSizeChanged(w, h, oldw, oldh);
+		protected override void OnSizeChanged (int w, int h, int oldw, int oldh)
+		{
+			base.OnSizeChanged (w, h, oldw, oldh);
 
 			mDrawingRect = new RectF ();
 			mDrawingRect.Left =  PaddingLeft;
@@ -103,7 +97,6 @@ namespace ColorPicker
 			mDrawingRect.Bottom = h - PaddingBottom;
 
 			setUpColorRect();
-
 		}
 
 		private void setUpColorRect(){

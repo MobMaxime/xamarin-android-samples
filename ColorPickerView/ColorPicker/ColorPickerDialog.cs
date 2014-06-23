@@ -1,9 +1,7 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -22,29 +20,28 @@ namespace ColorPicker
 		 
 		private OnColorChangedListener mListener;
 
-		public interface OnColorChangedListener {
-			void onColorChanged(int color);
-		} 
-
-		public ColorPickerDialog(Context context, int initialColor) : base(context) {
-
+		public ColorPickerDialog(Context context, int initialColor) : base(context,initialColor) {
+			mListener = null;
 			init(initialColor);
 		}
+
+		public ColorPickerDialog(Context context, int initialColor, OnColorChangedListener listener) : base(context) {
+			mListener = listener;
+			init(initialColor);
+		}
+
 
 		private void init(int color) {
-			// To fight color banding.
-
-			Window.SetFormat (Android.Graphics.Format.Rgb888);
-
+			// To fight color branding.
+			Window.SetFormat(Android.Graphics.Format.Rgb888);
 			setUp(color);
-
-		} 
-
-		public ColorPickerDialog(Context context, int initialColor, OnColorChangedListener listener)  : base(context) {
- 			mListener = listener;
-			init(initialColor);
 		}
-		 
+
+
+		public interface OnColorChangedListener {
+			void onColorChanged(int color);
+		}
+
 
 		private void setUp(int color) {
 			Boolean isLandscapeLayout = false;
@@ -63,7 +60,6 @@ namespace ColorPicker
 			if(landscapeLayout != null) {
 				isLandscapeLayout = true;
 			}
-
 
 			mColorPicker = (ColorPickerView) layout.FindViewById(Resource.Id.color_picker_view);
 			mOldColor = (ColorPanelView) layout.FindViewById(Resource.Id.color_panel_old);

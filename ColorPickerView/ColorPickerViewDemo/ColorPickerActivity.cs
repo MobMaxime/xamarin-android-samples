@@ -33,7 +33,7 @@ namespace ColorPickerViewDemo
 
 			SetContentView(Resource.Layout.Main);
 
-//			init();
+			init();
 		}
 
 		private void init() {
