@@ -8,7 +8,6 @@ Thanks to
 ---------
 * [Jeremy Feinstein](https://github.com/jfeinstein10) - The creator of [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu)
 
----------
 * [Cheesebaron](https://github.com/Cheesebaron) - The creator of [SlidingMenuSharp](https://github.com/Cheesebaron/SlidingMenuSharp)
 
 License
