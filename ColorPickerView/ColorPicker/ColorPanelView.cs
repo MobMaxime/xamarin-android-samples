@@ -65,7 +65,11 @@ namespace ColorPicker
 			RectF rect = mColorRect;
 
 			if(BORDER_WIDTH_PX > 0){
-				mBorderPaint.Color=Color.Red;
+
+				byte[] byteArr = BitConverter.GetBytes (mBorderColor);
+				mBorderPaint.Color = Color.Argb (byteArr [0], byteArr [1], byteArr [2], byteArr [3]);
+
+//				mBorderPaint.Color=Color.Red;
 				canvas.DrawRect(mDrawingRect, mBorderPaint);
 			}
 
@@ -73,7 +77,9 @@ namespace ColorPicker
 				mAlphaPattern.Draw(canvas);
 			}
 
-			mColorPaint.Color = Color.Gold;
+			byte[] byteArr1 = BitConverter.GetBytes (mColor);
+			mColorPaint.Color = Color.Argb (byteArr1 [0], byteArr1 [1], byteArr1 [2], byteArr1 [3]);
+//			mColorPaint.Color = Color.Gold;
 
 			canvas.DrawRect(rect, mColorPaint);
 		}

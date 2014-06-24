@@ -200,8 +200,8 @@ namespace ColorPicker
 		{
  
 			if(restorePersistedValue) {
-				mColor = GetPersistedInt (Convert.ToInt32 ("4278190080"));// getPersistedInt(0xFF000000);
-				//Log.d("mColorPicker", "Load saved color: " + mColor);
+				mColor = GetPersistedInt (Int32.Parse("FF000000", System.Globalization.NumberStyles.HexNumber));// getPersistedInt(0xFF000000);
+				Console.WriteLine("mColorPicker", "Load saved color: " + mColor);
 			}
 			else {
 				mColor = (int)defaultValue;

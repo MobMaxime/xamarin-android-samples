@@ -7,7 +7,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="12dp">
-    <ColorPicker.view.ColorPickerView
+    <ColorPicker.ColorPickerView
         android:id="@id/color_picker_view"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -20,7 +20,7 @@
         android:layout_below="@id/color_picker_view"
         android:layout_alignLeft="@id/color_picker_view"
         android:layout_alignRight="@id/color_picker_view">
-        <ColorPicker.view.ColorPanelView
+        <ColorPicker.ColorPanelView
             android:id="@id/color_panel_old"
             android:layout_width="0px"
             android:layout_height="fill_parent"
@@ -34,7 +34,7 @@
             android:textColor="#ffffff"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp" />
-        <ColorPicker.view.ColorPanelView
+        <ColorPicker.ColorPanelView
             android:id="@id/color_panel_new"
             android:layout_width="0px"
             android:layout_height="fill_parent"
