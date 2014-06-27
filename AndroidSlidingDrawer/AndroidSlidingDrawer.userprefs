@@ -1,8 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="AnimationDrawer/MultiDirectionSlidingDrawer.cs">
+    <Files>
+      <File FileName="AnimationDrawer/MainActivity.cs" Line="38" Column="8" />
+      <File FileName="AnimationDrawer/MultiDirectionSlidingDrawer.cs" Line="1031" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.AnimationDrawer MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" AndroidDeviceId-Debug="YT910RKNZX" />
 </Properties>

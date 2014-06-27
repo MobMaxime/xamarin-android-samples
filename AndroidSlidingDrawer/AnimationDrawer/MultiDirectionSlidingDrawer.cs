@@ -198,16 +198,17 @@ namespace AnimationDrawer
 			if ( mHandle == null ) { 
 				throw new Java.Lang.IllegalArgumentException( "The handle attribute is must refer to an" + " existing child." ); 
 			}
+			mHandle.SetOnClickListener ((IOnClickListener)new DrawerToggler (this));
 
-			mHandle.Click += (sender, e) => {
-				if ( mLocked ) { return; }
-	
-					if ( mAnimateOnClick ) {
-						animateToggle();
-					} else {
-						toggle();
-					}
-			};
+//			mHandle.Click += (sender, e) => {
+//				if ( mLocked ) { return; }
+//	
+//					if ( mAnimateOnClick ) {
+//						animateToggle();
+//					} else {
+//						toggle();
+//					}
+//			};
 			  
 
 			mContent = FindViewById( mContentId );
@@ -219,13 +220,13 @@ namespace AnimationDrawer
 
 		protected override void OnMeasure (int widthMeasureSpec, int heightMeasureSpec)
 		{
-			int widthSpecMode = (int)MeasureSpec.GetMode( widthMeasureSpec );
+			MeasureSpecMode widthSpecMode = MeasureSpec.GetMode( widthMeasureSpec );
 			int widthSpecSize = MeasureSpec.GetSize( widthMeasureSpec );
 
-			int heightSpecMode = (int)MeasureSpec.GetMode( heightMeasureSpec );
+			MeasureSpecMode heightSpecMode = MeasureSpec.GetMode( heightMeasureSpec );
 			int heightSpecSize = MeasureSpec.GetSize( heightMeasureSpec );
 
-			if ( widthSpecMode == (int)MeasureSpecMode.Unspecified || heightSpecMode == (int) MeasureSpecMode.Unspecified ) { throw new Java.Lang.RuntimeException(
+			if ( widthSpecMode == MeasureSpecMode.Unspecified || heightSpecMode == MeasureSpecMode.Unspecified ) { throw new Java.Lang.RuntimeException(
 				"SlidingDrawer cannot have UNSPECIFIED dimensions" ); }
 
 			View handle = mHandle;
@@ -326,7 +327,7 @@ namespace AnimationDrawer
 		{
 			if ( mLocked ) { return false; }
 
-			int action = (int) ev.Action;
+			MotionEventActions action = ev.Action;
 
 			float x = ev.GetX ();
 			float y = ev.GetY();
@@ -337,7 +338,7 @@ namespace AnimationDrawer
 			handle.GetHitRect( frame );
 			if ( !mTracking && !frame.Contains( (int)x, (int)y ) ) { return false; }
 
-			if ( action == (int) MotionEventActions.Down ) {
+			if ( action == MotionEventActions.Down ) {
 				mTracking = true;
 
 				handle.Pressed = true;
@@ -1010,15 +1011,16 @@ namespace AnimationDrawer
 		{
 			return mTracking || mAnimating;
 		}
-
-		private class SlidingHandler : Handler {
-			MultiDirectionSlidingDrawer MDS;
+		 
+		private class SlidingHandler : Android.OS.Handler{
+ 			MultiDirectionSlidingDrawer MDS;
 			public SlidingHandler(MultiDirectionSlidingDrawer mds) {
 				MDS = mds;
 			}
-			public void handleMessage( Message m )
+			public override void HandleMessage (Message msg)
 			{
-				switch ( m.What ) {
+				Console.WriteLine ("harsggdgfh gjg ghjg fyjh : ");
+				switch ( msg.What ) {
 				case 1000:
 					MDS.doAnimation();
 					break;
@@ -1028,28 +1030,34 @@ namespace AnimationDrawer
 
 
 		 
-//		public  class DrawerToggler : IOnClickListener {
-//
-//			MultiDirectionSlidingDrawer MDS;
-//			public DrawerToggler(MultiDirectionSlidingDrawer mds) {
-//				MDS = mds;
-//			}
-//
-//			public void OnClick( View v )
-//			{
-//				if ( MDS.mLocked ) { return; }
-//
-//				if ( MDS.mAnimateOnClick ) {
-//					MDS.animateToggle();
-//				} else {
-//					MDS.toggle();
-//				}
-//			}
-//
-//			public void Dispose() {
-//
-//			}
-//		}
+		public  class DrawerToggler : IOnClickListener {
+
+
+			MultiDirectionSlidingDrawer MDS;
+			public DrawerToggler(MultiDirectionSlidingDrawer mds) {
+				MDS = mds;
+			}
+
+			public IntPtr Handle {
+				get { 
+					return new IntPtr ();
+				}
+			}
+			public void OnClick( View v )
+			{
+				if ( MDS.mLocked ) { return; }
+
+				if ( MDS.mAnimateOnClick ) {
+					MDS.animateToggle();
+				} else {
+					MDS.toggle();
+				}
+			}
+
+			public void Dispose() {
+
+			}
+		}
 
 	}
 }
