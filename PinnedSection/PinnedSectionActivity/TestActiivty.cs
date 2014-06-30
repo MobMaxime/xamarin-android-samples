@@ -15,7 +15,7 @@ using Android.Graphics;
 namespace PinnedSectionActivity
 {
 	[Activity (Label = "TestActiivty", MainLauncher = true)]			
-	public class TestActiivty : ListActivity, View.IOnClickListener
+	public class TestActiivty : Activity, View.IOnClickListener
 	{
 		class Item {
 
@@ -136,7 +136,7 @@ namespace PinnedSectionActivity
 
 				int itemsNumber = (int) Math.Abs((Math.Cos(2f*Math.PI/3f * sectionsNumber / (i+1f)) * 25f));
 				for (int j=0;j<itemsNumber;j++) {
-					Item item = new Item(Item.ITEM, section.text.ToUpper());//Locale.ENGLISH) + " - " + j);
+						Item item = new Item(Item.ITEM, section.text.ToUpper() + " - " + j);
 					item.sectionPosition = sectionPosition;
 					item.listPosition = listPosition++;
 					Add(item);
@@ -155,10 +155,12 @@ namespace PinnedSectionActivity
 			view.SetTextColor(Color.DarkGray);
 			view.Tag = ("" + position);
 			Item item = GetItem(position);
-			if (item.type == Item.SECTION) {
-				//view.setOnClickListener(PinnedSectionListActivity.this);
-				view.SetBackgroundColor(parent.Resources.GetColor(COLORS[item.sectionPosition % COLORS.Length]));
-			}
+				if (item.type == Item.SECTION) {
+					//view.setOnClickListener(PinnedSectionListActivity.this);
+					view.SetBackgroundColor (parent.Resources.GetColor (COLORS [item.sectionPosition % COLORS.Length]));
+				}
+
+				view.Text = item.text;
 			return view;
 		}
 
