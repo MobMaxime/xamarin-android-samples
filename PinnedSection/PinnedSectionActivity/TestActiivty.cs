@@ -16,29 +16,7 @@ namespace PinnedSectionActivity
 {
 	[Activity (Label = "TestActiivty", MainLauncher = true)]			
 	public class TestActiivty : Activity, View.IOnClickListener
-	{
-		class Item {
-
-			public static int ITEM = 0;
-			public static int SECTION = 1;
-
-			public int type;
-			public String text;
-
-			public int sectionPosition;
-			public int listPosition;
-
-			public Item(int type, String text) {
-				this.type = type;
-				this.text = text;
-			}
-
-			public String toString() {
-				return text;
-			}
-
-		}
-
+	{  
 		private Boolean hasHeaderAndFooter;
 		private Boolean isFastScroll;
 		private Boolean addPadding;
@@ -111,6 +89,28 @@ namespace PinnedSectionActivity
 			//			} else {
 			//				ListAdapter = new SimpleAdapter(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1);
 			//			}
+		}
+
+		class Item {
+
+			public static int ITEM = 0;
+			public static int SECTION = 1;
+
+			public int type;
+			public String text;
+
+			public int sectionPosition;
+			public int listPosition;
+
+			public Item(int type, String text) {
+				this.type = type;
+				this.text = text;
+			}
+
+			public String toString() {
+				return text;
+			}
+
 		}
 
 	class SimpleAdapter : ArrayAdapter<Item>, PinnedSectionListView.PinnedSectionListAdapter {
