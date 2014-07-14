@@ -15,7 +15,7 @@ using Android.Database;
 
 namespace PinnedSectionActivity
 {
-	public class PinnedSectionListView : ListView
+	public class PinnedSectionListView1 : ListView
 	{
 
 		//-- inner classes
@@ -48,7 +48,7 @@ namespace PinnedSectionActivity
 		private int mShadowHeight;
 
 		/** Delegating listener, can be null. */
-		OnScrollListenerImpl mDelegateOnScrollListener;
+		AbsListView.IOnScrollListener mDelegateOnScrollListener;
 
 		/** Shadow for being recycled, can be null. */
 		PinnedSection mRecycleSection;
@@ -59,23 +59,15 @@ namespace PinnedSectionActivity
 		/** Pinned view Y-translation. We use it to stick pinned view to the next section. */
 		int mTranslateY;
 
-		public class OnScrollListenerImpl : Android.Widget.AbsListView.IOnScrollListener {
+		public class OnScrollListenerImpl : Java.Lang.Object, Android.Widget.AbsListView.IOnScrollListener {
 
-			PinnedSectionListView psl;
-			public IntPtr Handle {
-				get { 
-					return new IntPtr ();
-				}
-			}
+			PinnedSectionListView1 psl;
 
-			public OnScrollListenerImpl(PinnedSectionListView psl) {
+
+
+			public OnScrollListenerImpl(PinnedSectionListView1 psl)  {
 				this.psl = psl;
 			}
-
-			public void Dispose () {
-
-			}
-
 
 			public void OnScrollStateChanged(AbsListView view, int scrollState) {
 				if (psl.mDelegateOnScrollListener != null) { // delegate
@@ -83,13 +75,15 @@ namespace PinnedSectionActivity
 				}
 			}
 
-			public void OnScrollStateChanged(AbsListView view, ScrollState scrollState) {
+			public void OnScrollStateChanged (AbsListView view, ScrollState scrollState) {
 				if (psl.mDelegateOnScrollListener != null) { // delegate
 					psl.mDelegateOnScrollListener.OnScrollStateChanged(view, scrollState);
 				}
 			}
 
-			public void OnScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+			public void OnScroll (AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+				Console.WriteLine ("on scrolll event");
 
 				if (psl.mDelegateOnScrollListener != null) { // delegate
 					psl.mDelegateOnScrollListener.OnScroll(view, firstVisibleItem, visibleItemCount, totalItemCount);
@@ -125,8 +119,8 @@ namespace PinnedSectionActivity
 		/** Default change observer. */
 
 		private class DataSetObserverImpl : DataSetObserver {
-			PinnedSectionListView psl;
-			public DataSetObserverImpl(PinnedSectionListView psl) {
+			PinnedSectionListView1 psl;
+			public DataSetObserverImpl(PinnedSectionListView1 psl) {
 				this.psl = psl;
 			} 
 			public override void OnChanged ()
@@ -140,16 +134,26 @@ namespace PinnedSectionActivity
 			}
 		}
 
-		private DataSetObserverImpl mDataSetObserver;
-		private OnScrollListenerImpl mOnScrollListener;
+		private DataSetObserver mDataSetObserver;
+		private IOnScrollListener mOnScrollListener;
 
 		//-- constructors
 
-		public PinnedSectionListView(Context context, IAttributeSet attrs) : base(context, attrs) {
+
+
+		public PinnedSectionListView1(Context context) : base(context) {
 			initView();
 		}
 
-		public PinnedSectionListView(Context context, IAttributeSet attrs, int defStyle) : base(context, attrs, defStyle) {
+		public PinnedSectionListView1(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) {
+			initView();
+		}
+
+		public PinnedSectionListView1(Context context, IAttributeSet attrs) : base(context, attrs) {
+			initView();
+		}
+
+		public PinnedSectionListView1(Context context, IAttributeSet attrs, int defStyle) : base(context, attrs, defStyle) {
 			initView();
 		}
 

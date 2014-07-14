@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +10,35 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Graphics;
+using PinnedSectionLibrary;
 
-namespace PinnedSectionActivity
+namespace PinnedSectionSample
 {
-	[Activity (Label = "TestActiivty", MainLauncher = true)]			
-	public class TestActiivty : Activity, View.IOnClickListener
-	{  
+	[Activity (Label = "PinnedSectionSample", MainLauncher = true)]			
+	public class TestActiivty : ListActivity, View.IOnClickListener
+	{
+		class Item {
+
+			public static int ITEM = 0;
+			public static int SECTION = 1;
+
+			public int type;
+			public String text;
+
+			public int sectionPosition;
+			public int listPosition;
+
+			public Item(int type, String text) {
+				this.type = type;
+				this.text = text;
+			}
+
+			public String toString() {
+				return text;
+			}
+
+		}
+
 		private Boolean hasHeaderAndFooter;
 		private Boolean isFastScroll;
 		private Boolean addPadding;
@@ -35,8 +57,7 @@ namespace PinnedSectionActivity
 			base.OnCreate (bundle);
 
 			SetContentView (Resource.Layout.Main);
-
-			listview = FindViewById<PinnedSectionListView> (Resource.Id.list);
+			listview = FindViewById<PinnedSectionListView> (Android.Resource.Id.List);
 
 			//listview.Adapter = new SimpleAdapter(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1);
 			if (bundle != null) {
@@ -44,7 +65,14 @@ namespace PinnedSectionActivity
 				addPadding = bundle.GetBoolean("addPadding");
 				isShadowVisible = bundle.GetBoolean("isShadowVisible");
 				hasHeaderAndFooter = bundle.GetBoolean("hasHeaderAndFooter");
+
+
 			}
+			isFastScroll = true;
+			addPadding = true;
+			isShadowVisible = true;
+			hasHeaderAndFooter = true;
+
 			initializeHeaderAndFooter();
 			initializeAdapter();
 			initializePadding();
@@ -91,28 +119,6 @@ namespace PinnedSectionActivity
 			//			}
 		}
 
-		class Item {
-
-			public static int ITEM = 0;
-			public static int SECTION = 1;
-
-			public int type;
-			public String text;
-
-			public int sectionPosition;
-			public int listPosition;
-
-			public Item(int type, String text) {
-				this.type = type;
-				this.text = text;
-			}
-
-			public String toString() {
-				return text;
-			}
-
-		}
-
 	class SimpleAdapter : ArrayAdapter<Item>, PinnedSectionListView.PinnedSectionListAdapter {
 
 		private static int[] COLORS = new int[] {
@@ -136,7 +142,7 @@ namespace PinnedSectionActivity
 
 				int itemsNumber = (int) Math.Abs((Math.Cos(2f*Math.PI/3f * sectionsNumber / (i+1f)) * 25f));
 				for (int j=0;j<itemsNumber;j++) {
-						Item item = new Item(Item.ITEM, section.text.ToUpper() + " - " + j);
+					Item item = new Item(Item.ITEM, section.text.ToUpper() + " - " + j);
 					item.sectionPosition = sectionPosition;
 					item.listPosition = listPosition++;
 					Add(item);
@@ -155,10 +161,10 @@ namespace PinnedSectionActivity
 			view.SetTextColor(Color.DarkGray);
 			view.Tag = ("" + position);
 			Item item = GetItem(position);
-				if (item.type == Item.SECTION) {
-					//view.setOnClickListener(PinnedSectionListActivity.this);
-					view.SetBackgroundColor (parent.Resources.GetColor (COLORS [item.sectionPosition % COLORS.Length]));
-				}
+			if (item.type == Item.SECTION) {
+				//view.setOnClickListener(PinnedSectionListActivity.this);
+				view.SetBackgroundColor(parent.Resources.GetColor(COLORS[item.sectionPosition % COLORS.Length]));
+			}
 
 				view.Text = item.text;
 			return view;

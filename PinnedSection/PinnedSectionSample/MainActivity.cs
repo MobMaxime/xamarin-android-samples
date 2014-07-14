@@ -7,8 +7,9 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Graphics;
+using PinnedSectionLibrary;
 
-namespace PinnedSectionActivity
+namespace PinnedSectionSample
 {
 	[Activity (Label = "PinnedSectionList", MainLauncher = false)]
 	public class MainActivity : ListActivity, View.IOnClickListener

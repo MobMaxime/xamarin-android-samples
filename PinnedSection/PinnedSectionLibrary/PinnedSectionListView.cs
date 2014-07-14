@@ -48,7 +48,7 @@ namespace PinnedSectionLibrary
 		private int mShadowHeight;
 
 		/** Delegating listener, can be null. */
-		OnScrollListenerImpl mDelegateOnScrollListener;
+		AbsListView.IOnScrollListener mDelegateOnScrollListener;
 
 		/** Shadow for being recycled, can be null. */
 		PinnedSection mRecycleSection;
@@ -59,23 +59,15 @@ namespace PinnedSectionLibrary
 		/** Pinned view Y-translation. We use it to stick pinned view to the next section. */
 		int mTranslateY;
 
-		public class OnScrollListenerImpl : Android.Widget.AbsListView.IOnScrollListener {
+		public class OnScrollListenerImpl : Java.Lang.Object, Android.Widget.AbsListView.IOnScrollListener {
 
 			PinnedSectionListView psl;
-			public IntPtr Handle {
-				get { 
-					return new IntPtr ();
-				}
-			}
 
-			public OnScrollListenerImpl(PinnedSectionListView psl) {
+
+
+			public OnScrollListenerImpl(PinnedSectionListView psl)  {
 				this.psl = psl;
 			}
-
-			public void Dispose () {
-
-			}
-
 
 			public void OnScrollStateChanged(AbsListView view, int scrollState) {
 				if (psl.mDelegateOnScrollListener != null) { // delegate
@@ -83,13 +75,15 @@ namespace PinnedSectionLibrary
 				}
 			}
 
-			public void OnScrollStateChanged(AbsListView view, ScrollState scrollState) {
+			public void OnScrollStateChanged (AbsListView view, ScrollState scrollState) {
 				if (psl.mDelegateOnScrollListener != null) { // delegate
 					psl.mDelegateOnScrollListener.OnScrollStateChanged(view, scrollState);
 				}
 			}
 
-			public void OnScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+			public void OnScroll (AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+				Console.WriteLine ("on scrolll event");
 
 				if (psl.mDelegateOnScrollListener != null) { // delegate
 					psl.mDelegateOnScrollListener.OnScroll(view, firstVisibleItem, visibleItemCount, totalItemCount);
@@ -140,10 +134,20 @@ namespace PinnedSectionLibrary
 			}
 		}
 
-		private DataSetObserverImpl mDataSetObserver;
-		private OnScrollListenerImpl mOnScrollListener;
+		private DataSetObserver mDataSetObserver;
+		private IOnScrollListener mOnScrollListener;
 
 		//-- constructors
+
+
+
+		public PinnedSectionListView(Context context) : base(context) {
+			initView();
+		}
+
+		public PinnedSectionListView(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) {
+			initView();
+		}
 
 		public PinnedSectionListView(Context context, IAttributeSet attrs) : base(context, attrs) {
 			initView();
@@ -169,7 +173,7 @@ namespace PinnedSectionLibrary
 			initShadow(visible);
 			if (mPinnedSection != null) {
 				View v = mPinnedSection.view;
-						Invalidate(v.Left, v.Top, v.Right, v.Bottom + mShadowHeight);
+				Invalidate(v.Left, v.Top, v.Right, v.Bottom + mShadowHeight);
 			}
 		}
 
@@ -297,16 +301,16 @@ namespace PinnedSectionLibrary
 		int findCurrentSectionPosition(int fromPosition) {
 			IListAdapter adapter = Adapter;
 
-//			if (adapter.GetType() == ISectionIndexer) {
-//				// try fast way by asking section indexer
-//				SectionIndexerImpl indexer = (SectionIndexerImpl) adapter;
-//				int sectionPosition = indexer.GetSectionForPosition(fromPosition);
-//				int itemPosition = indexer.GetPositionForSection(sectionPosition);
-//				int typeView = adapter.GetItemViewType(itemPosition);
-//				if (isItemViewTypePinned(adapter, typeView)) {
-//					return itemPosition;
-//				} // else, no luck
-//			}
+			//			if (adapter.GetType() == ISectionIndexer) {
+			//				// try fast way by asking section indexer
+			//				SectionIndexerImpl indexer = (SectionIndexerImpl) adapter;
+			//				int sectionPosition = indexer.GetSectionForPosition(fromPosition);
+			//				int itemPosition = indexer.GetPositionForSection(sectionPosition);
+			//				int typeView = adapter.GetItemViewType(itemPosition);
+			//				if (isItemViewTypePinned(adapter, typeView)) {
+			//					return itemPosition;
+			//				} // else, no luck
+			//			}
 
 			// try slow way by looking through to the next section item above
 			for (int position=fromPosition; position>=0; position--) {
@@ -352,13 +356,13 @@ namespace PinnedSectionLibrary
 		public override void SetAdapter (IListAdapter adapter)
 		{
 			// assert adapter in debug mode
-//			if (BuildConfig.DEBUG && adapter != null) {
-//				if (!(adapter.GetType() ==  (new PinnedSectionListAdapter()).GetType()))
-//					throw IllegalArgumentException("Does your adapter implement PinnedSectionListAdapter?");
-//				if (adapter.ViewTypeCount < 2)
-//					throw new IllegalArgumentException("Does your adapter handle at least two types" +
-//						" of views in getViewTypeCount() method: items and sections?");
-//			}
+			//			if (BuildConfig.DEBUG && adapter != null) {
+			//				if (!(adapter.GetType() ==  (new PinnedSectionListAdapter()).GetType()))
+			//					throw IllegalArgumentException("Does your adapter implement PinnedSectionListAdapter?");
+			//				if (adapter.ViewTypeCount < 2)
+			//					throw new IllegalArgumentException("Does your adapter handle at least two types" +
+			//						" of views in getViewTypeCount() method: items and sections?");
+			//			}
 
 			// unregister observer at old adapter and register on new one
 			IListAdapter oldAdapter = Adapter;
