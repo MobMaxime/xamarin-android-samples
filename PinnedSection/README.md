@@ -1,7 +1,7 @@
 PinnedSectionSharp
 ================
 
-Still under construction.
+Sticky Headers sample for listView.
 
 Thanks to
 ---------
