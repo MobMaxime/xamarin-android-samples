@@ -178,9 +178,6 @@ namespace ColorPickerViewDemo
 			// aapt resource value: 0x7f020002
 			public const int Icon = 2130837506;
 			
-			// aapt resource value: 0x7f020003
-			public const int monoandroidsplash = 2130837507;
-			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -320,9 +317,6 @@ namespace ColorPickerViewDemo
 			
 			// aapt resource value: 0x7f080002
 			public const int AppTheme = 2131230722;
-			
-			// aapt resource value: 0x7f080003
-			public const int Mono_Android_Theme_Splash = 2131230723;
 			
 			// aapt resource value: 0x7f080000
 			public const int dialog_color_pciker_view_portrait = 2131230720;

@@ -14,8 +14,8 @@ using Android.Preferences;
 
 namespace ColorPickerViewDemo
 {
-	[Activity (Label = "ColorPickerActivity",MainLauncher = false)]			
-	public class ColorPickerActivity : Activity, View.IOnClickListener, ColorPicker.ColorPickerView.OnColorChangedListener
+	[Activity (Label = "colorpickeractivity",MainLauncher = false)]			
+	public class colorpickeractivity : Activity, View.IOnClickListener, ColorPicker.ColorPickerView.OnColorChangedListener
 	{
 		private ColorPickerView			mColorPickerView;
 		private ColorPanelView			mOldColorPanelView;

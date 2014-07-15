@@ -15,14 +15,28 @@ using ColorPicker;
 namespace ColorPickerViewDemo
 {
 	[Activity (Label = "MainActivity",MainLauncher = true)]			
-	public class MainActivity : PreferenceActivity
+	public class MainActivity : PreferenceActivity //PreferenceFragment
 	{
+		  
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-
+			  
 			AddPreferencesFromResource (Resource.Xml.main);
 		}
+
+//		public override void OnCreate (Bundle savedInstanceState)
+//		{
+//			base.OnCreate (savedInstanceState);
+//
+//			AddPreferencesFromResource (Resource.Xml.main);
+//		}
+//		 
+//		public override void OnCreateOptionsMenu (IMenu menu, MenuInflater inflater)
+//		{  
+//			inflater.Inflate (Resource.Menu.main, menu);
+//			 
+//		}
 
 		public override bool OnCreateOptionsMenu (IMenu menu)
 		{
@@ -30,7 +44,7 @@ namespace ColorPickerViewDemo
 
 			return true;
 		}
-
+//
 		public override bool OnOptionsItemSelected (IMenuItem item)
 		{
 

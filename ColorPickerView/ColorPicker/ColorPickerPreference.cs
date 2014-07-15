@@ -14,10 +14,11 @@ using Android.Graphics;
 using Android.Util;
 using Java.Lang;
 using Android.Content.Res;
+using ColorPicker;
 
-namespace ColorPicker
+namespace colorpicker
 {
-	public class ColorPickerPreference : DialogPreference,ColorPickerView.OnColorChangedListener
+	public class colorpickerpreference : DialogPreference,ColorPickerView.OnColorChangedListener
 	{
 		private ColorPickerView				mColorPickerView;
 		private ColorPanelView				mOldColorView;
@@ -33,11 +34,11 @@ namespace ColorPicker
 		private int							colorPickerBorderColor = -1;
 
 
-		public ColorPickerPreference(Context context, IAttributeSet attrs) : base(context, attrs){
+		public colorpickerpreference(Context context, IAttributeSet attrs) : base(context, attrs){
 			init(attrs);
 		}
 
-		public ColorPickerPreference(Context context, IAttributeSet attrs, int defStyle) :base(context, attrs, defStyle){
+		public colorpickerpreference(Context context, IAttributeSet attrs, int defStyle) :base(context, attrs, defStyle){
 			init(attrs); 
 		} 
 

@@ -18,18 +18,18 @@
     xmlns:picker="http://schemas.android.com/apk/res/colorpickerviewdemo.colorpickerviewdemo" >
 
     <PreferenceCategory android:title="Demo" >
-        <ColorPicker.ColorPickerPreference
+<!--        <colorpicker.colorpickerpreference
             android:defaultValue="0xFF000000"
             android:key="color"
             android:summary="Show our color picker using the custom ColorPickerPreference class"
-            android:title="Show Dialog" />
+            android:title="Show Dialog" />-->
 
         <Preference
             android:summary="Show how the custom color picker can be used in a standard activity."
             android:title="Show Activity" >
             <intent
                 android:action="android.intent.action.VIEW"
-                android:targetClass="ColorPickerViewDemo.ColorPickerActivity"
+                android:targetClass="colorpickerviewdemo.colorpickeractivity"
                 android:targetPackage="colorpickerviewdemo.colorpickerviewdemo" />
         </Preference>
     </PreferenceCategory>
