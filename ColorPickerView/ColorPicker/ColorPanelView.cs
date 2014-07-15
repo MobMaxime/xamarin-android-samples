@@ -25,6 +25,7 @@ namespace ColorPicker
 
 		private float mDensity = 1f;
 
+		//TODO: check Convertion
 		private int mBorderColor = Int32.Parse("ff6E6E6E", System.Globalization.NumberStyles.HexNumber);//Convert.ToInt32 ("4285427310");
 		private int mColor = Int32.Parse("ff000000", System.Globalization.NumberStyles.HexNumber);//Convert.ToInt32 ("4278190080");
 		  
@@ -37,12 +38,12 @@ namespace ColorPicker
 		private AlphaPatternDrawable mAlphaPattern;
 
 
-		public ColorPanelView (Context context) : base (context)
+		public ColorPanelView (Context context) : base (context, null, 0)
 		{
 			Initialize ();
 		}
 
-		public ColorPanelView (Context context, IAttributeSet attrs) :  base (context, attrs)
+		public ColorPanelView (Context context, IAttributeSet attrs) :  base (context, attrs, 0)
 		{
 			Initialize ();
 		}
@@ -66,10 +67,10 @@ namespace ColorPicker
 
 			if(BORDER_WIDTH_PX > 0){
 
+				//TODO : check the conversion
 				byte[] byteArr = BitConverter.GetBytes (mBorderColor);
 				mBorderPaint.Color = Color.Argb (byteArr [0], byteArr [1], byteArr [2], byteArr [3]);
 
-//				mBorderPaint.Color=Color.Red;
 				canvas.DrawRect(mDrawingRect, mBorderPaint);
 			}
 
@@ -77,6 +78,7 @@ namespace ColorPicker
 				mAlphaPattern.Draw(canvas);
 			}
 
+			//TODO : check the conversion
 			byte[] byteArr1 = BitConverter.GetBytes (mColor);
 			mColorPaint.Color = Color.Argb (byteArr1 [0], byteArr1 [1], byteArr1 [2], byteArr1 [3]);
 //			mColorPaint.Color = Color.Gold;

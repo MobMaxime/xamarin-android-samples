@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,10 +25,10 @@ namespace ColorPicker
 
 		private int							mColor;
 
-		private System.Boolean						alphaChannelVisible = false;
+		private System.Boolean				alphaChannelVisible = false;
 		private string						alphaChannelText = null;
-		private System.Boolean						showDialogTitle = false;
-		private System.Boolean						showPreviewSelectedColorInList = true;
+		private System.Boolean				showDialogTitle = false;
+		private System.Boolean				showPreviewSelectedColorInList = true;
 		private int							colorPickerSliderColor = -1;
 		private int							colorPickerBorderColor = -1;
 
@@ -64,7 +63,7 @@ namespace ColorPicker
 			}
 
 			if(!showDialogTitle) {
-				SetDialogTitle(Resource.String.dialog_title);
+				DialogTitle = null;
 			}
 
 			DialogLayoutResource = Resource.Layout.dialog_color_picker;
@@ -100,7 +99,7 @@ namespace ColorPicker
 		{
 			base.OnRestoreInstanceState (state);
 
-			if (state == null || !(state.GetType().Equals(new SavedState(state)))) {
+			if (state == null || !(state.GetType().Equals(new SavedState(state).GetType()))) {
 				// Didn't save state for us in onSaveInstanceState
 				base.OnRestoreInstanceState (state);
 				return;
@@ -113,7 +112,6 @@ namespace ColorPicker
 
 			// Set this Preference's widget to reflect the restored state
 			if(Dialog != null && mColorPickerView != null) {
-//				Log.d("mColorPicker", "Restoring color!");	    	
 				mColorPickerView.setColor(myState.currentColor, true);
 			}
 
@@ -200,8 +198,8 @@ namespace ColorPicker
 		{
  
 			if(restorePersistedValue) {
+				//TODO: Cross check the conversion
 				mColor = GetPersistedInt (Int32.Parse("FF000000", System.Globalization.NumberStyles.HexNumber));// getPersistedInt(0xFF000000);
-				Console.WriteLine("mColorPicker", "Load saved color: " + mColor);
 			}
 			else {
 				mColor = (int)defaultValue;
@@ -211,6 +209,7 @@ namespace ColorPicker
 	 
 		protected override Java.Lang.Object OnGetDefaultValue (TypedArray a, int index)
 		{
+			//TODO: cross check with the native app
 			return base.OnGetDefaultValue (a, index);
 		}
 	     
@@ -232,10 +231,23 @@ namespace ColorPicker
 			public override void WriteToParcel (Parcel dest, ParcelableWriteFlags flags)
 			{
 				base.WriteToParcel (dest, flags);
-				dest.WriteBundle((Bundle)currentColor);
+				dest.WriteInt (currentColor);
 			}
 
-			//			public static ParcelableCreator CREATOR = new ParcelableCreator(); 
+			//TODO: To convert into C# code
+
+			// Standard creator object using an instance of this class
+//			public static IParcelableCreator<SavedState> CREATOR =
+//				new Parcelable.Creator<SavedState>() {
+//
+//				public SavedState createFromParcel(Parcel in) {
+//					return new SavedState(in);
+//				}
+//
+//				public SavedState[] newArray(int size) {
+//					return new SavedState[size];
+//				}
+//			};
 
 		} 
 	}

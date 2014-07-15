@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,7 +32,9 @@ namespace ColorPicker
 
 		public AlphaPatternDrawable(int rectangleSize) {
 			mRectangleSize = rectangleSize;
-			mPaintWhite.Color = Color.White;;
+
+			//TODO : change as per native lib
+			mPaintWhite.Color = Color.White;
 			mPaintGray.Color = Color.Gray;
 		}
 

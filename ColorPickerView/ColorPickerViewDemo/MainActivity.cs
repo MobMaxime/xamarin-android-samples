@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +15,13 @@ using ColorPicker;
 namespace ColorPickerViewDemo
 {
 	[Activity (Label = "MainActivity",MainLauncher = true)]			
-	public class MainActivity : Activity
+	public class MainActivity : PreferenceActivity
 	{
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
-			// Create your application here
+			AddPreferencesFromResource (Resource.Xml.main);
 		}
 
 		public override bool OnCreateOptionsMenu (IMenu menu)
@@ -51,6 +50,7 @@ namespace ColorPickerViewDemo
 			//a dialog using the custom ColorPickerDialog class.
 
 			var prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+			//TODO: check with the value for color
 			int initialValue = prefs.GetInt("color_2", Int32.Parse("FF000000", System.Globalization.NumberStyles.HexNumber));
 
 			Console.WriteLine("mColorPicker", "initial value:" + initialValue);
@@ -60,22 +60,20 @@ namespace ColorPickerViewDemo
 			colorDialog.setAlphaSliderVisible(true);
 			colorDialog.SetTitle("Pick a Color!");
 
-//			colorDialog.setButton(DialogInterface.BUTTON_POSITIVE, getString(android.R.string.ok), new DialogInterface.OnClickListener() {
+//			colorDialog.setButton(DialogInterface.BUTTON_POSITIVE, getString(Resource.String.dialog_ok), new DialogInterface.OnClickListener() {
 //
-//				@Override
 //				public void onClick(DialogInterface dialog, int which) {
-//					Toast.makeText(MainActivity.this, "Selected Color: " + colorToHexString(colorDialog.getColor()), Toast.LENGTH_LONG).show();
+//					Toast.MakeText(this, "Selected Color: " + colorToHexString(colorDialog.getColor()), ToastLength.Long).Show();
 //
 //					//Save the value in our preferences.
-//					SharedPreferences.Editor editor = prefs.edit();
-//					editor.putInt("color_2", colorDialog.getColor());
-//					editor.commit();
+//					ISharedPreferencesEditor editor = prefs.Edit();
+//					editor.PutInt("color_2", colorDialog.getColor());
+//					editor.Commit();
 //				}
 //			});
 //
 //			colorDialog.setButton(DialogInterface.BUTTON_NEGATIVE, getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
 //
-//				@Override
 //				public void onClick(DialogInterface dialog, int which) {
 //					//Nothing to do here.
 //				}
@@ -89,5 +87,7 @@ namespace ColorPickerViewDemo
 			return String.Format("#%06X", 0xFFFFFFFF & color);
 		}
 	}
+
+
 }
 

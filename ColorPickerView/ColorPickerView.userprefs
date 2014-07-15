@@ -1,13 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ColorPickerViewDemo/MainActivity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.androidEmu" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ColorPickerViewDemo/ColorPickerActivity.cs">
     <Files>
-      <File FileName="ColorPickerViewDemo/MainActivity.cs" Line="51" Column="22" />
-      <File FileName="ColorPickerViewDemo/ColorPickerActivity.cs" Line="1" Column="1" />
-      <File FileName="ColorPicker/ColorPanelView.cs" Line="1" Column="1" />
-      <File FileName="ColorPicker/ColorPickerDialog.cs" Line="1" Column="1" />
-      <File FileName="ColorPicker/ColorPickerPreference.cs" Line="1" Column="1" />
-      <File FileName="ColorPicker/ColorPickerView.cs" Line="1" Column="1" />
+      <File FileName="ColorPicker/ColorPickerView.cs" Line="1006" Column="25" />
+      <File FileName="ColorPickerViewDemo/MainActivity.cs" Line="91" Column="2" />
+      <File FileName="ColorPickerViewDemo/ColorPickerActivity.cs" Line="78" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +17,10 @@ namespace ColorPicker
 {
 	public class ColorPickerView : View
 	{  
+		public interface OnColorChangedListener {
+			void onColorChanged(int color);
+		}
+
 		private  static int	PANEL_SAT_VAL = 0;
 		private  static int	PANEL_HUE = 1;
 		private  static int	PANEL_ALPHA = 2;
@@ -54,7 +57,7 @@ namespace ColorPicker
 
 		private static float mDensity = 1f;
 
-		private ColorPicker.ColorPickerView.OnColorChangedListener	mListener;
+		private OnColorChangedListener	mListener;
 
 		private Paint 		mSatValPaint;
 		private Paint		mSatValTrackerPaint;
@@ -86,6 +89,8 @@ namespace ColorPicker
 		private float 		mVal = 0f;
 
 		private String		mAlphaSliderText = null;
+
+		//TODO: cross check the calculation
 		private int mSliderTrackerColor = Int32.Parse("FFBDBDBD", System.Globalization.NumberStyles.HexNumber);//Convert.ToInt32("4280032284");
 		private int mBorderColor = Int32.Parse("FF6E6E6E", System.Globalization.NumberStyles.HexNumber);//Convert.ToInt32 ("4285427310");
 		private Boolean		mShowAlphaPanel = false;
@@ -118,17 +123,11 @@ namespace ColorPicker
 
 		private Point	mStartTouchPoint = null;
 
-
-		public interface OnColorChangedListener {
-			void onColorChanged(int color);
-		}
-
-
-		public ColorPickerView (Context context) : base (context)
+		public ColorPickerView (Context context) : base (context, null, 0)
 		{
  		}
 
-		public ColorPickerView (Context context, IAttributeSet attrs) : base (context, attrs)
+		public ColorPickerView (Context context, IAttributeSet attrs) : base (context, attrs, 0)
 		{
 			Initialize (attrs);
  		}
@@ -144,6 +143,7 @@ namespace ColorPicker
 			TypedArray a = Context.ObtainStyledAttributes (attrs, Resource.Styleable.ColorPickerView);
 			mShowAlphaPanel = a.GetBoolean(Resource.Styleable.ColorPickerView_alphaChannelVisible, false);
 			mAlphaSliderText = a.GetString(Resource.Styleable.ColorPickerView_alphaChannelText);		
+			//TODO : cross check calculation
 			mSliderTrackerColor = a.GetColor(Resource.Styleable.ColorPickerView_colorPickerSliderColor,Int32.Parse("FFBDBDBD", System.Globalization.NumberStyles.HexNumber));
 			mBorderColor = a.GetColor(Resource.Styleable.ColorPickerView_colorPickerBorderColor, Int32.Parse("FF6E6E6E", System.Globalization.NumberStyles.HexNumber));
 			a.Recycle();
@@ -182,6 +182,7 @@ namespace ColorPicker
 			mSatValTrackerPaint.StrokeWidth = (2f * mDensity);
 			mSatValTrackerPaint.AntiAlias = true;
 
+			//TODO: Check the color the changes
 			byte[] byteArr = BitConverter.GetBytes (mSliderTrackerColor);
 			mHueAlphaTrackerPaint.Color = Color.Argb (byteArr [0], byteArr [1], byteArr [2], byteArr [3]);
 
@@ -190,6 +191,7 @@ namespace ColorPicker
 			mHueAlphaTrackerPaint.StrokeWidth = (2f * mDensity);
 			mHueAlphaTrackerPaint.AntiAlias = true;
 
+			//TODO: change color as per the native lib
 			mAlphaTextPaint.Color = Color.Brown;
 			mAlphaTextPaint.TextSize = (14f * mDensity);
 			mAlphaTextPaint.AntiAlias = true;
@@ -238,6 +240,7 @@ namespace ColorPicker
 			RectF	rect = mSatValRect;
 
 			if(BORDER_WIDTH_PX > 0){	
+				//TODO : Cross check the conversion
 				byte[] byteArr = BitConverter.GetBytes (mBorderColor);
 				mBorderPaint.Color = Color.Argb (byteArr [0], byteArr [1], byteArr [2], byteArr [3]);
 				//mBorderPaint.Color = mBorderColor;
@@ -246,6 +249,7 @@ namespace ColorPicker
 			}
 
 			if(mValShader == null) {
+				//TODO: Set as per native lib
 				//Black gradient has either not been created or the view has been resized.			
 				mValShader = new LinearGradient(rect.Left, rect.Top, rect.Left, rect.Bottom, 
 					Color.White, Color.Black, Android.Graphics.Shader.TileMode.Clamp);
@@ -272,6 +276,7 @@ namespace ColorPicker
 
 				Color rgb = Color.HSVToColor(new float[]{mHue,1f,1f});
 
+				//TODO: set as per native client
 				mSatShader = new LinearGradient(rect.Left, rect.Top, rect.Right, rect.Top, 
 					Color.White, rgb, Android.Graphics.Shader.TileMode.Clamp);
 
@@ -297,9 +302,11 @@ namespace ColorPicker
 
 			Point p = satValToPoint(mSat, mVal);
 
+			//TODO: set as per native lib
 			mSatValTrackerPaint.Color = Color.Black;
 			canvas.DrawCircle(p.X, p.Y, PALETTE_CIRCLE_TRACKER_RADIUS - 1f * mDensity, mSatValTrackerPaint);
 
+			//TODO: set as per native lib
 			mSatValTrackerPaint.Color = Color.Blue;
 			canvas.DrawCircle(p.X, p.Y, PALETTE_CIRCLE_TRACKER_RADIUS, mSatValTrackerPaint);
 
@@ -315,6 +322,8 @@ namespace ColorPicker
 			RectF rect = mHueRect;
 
 			if(BORDER_WIDTH_PX > 0) {
+				//TODO: Cross check the color setting
+
 				byte[] byteArr = BitConverter.GetBytes (mBorderColor);
 				mBorderPaint.Color = Color.Argb (byteArr [0], byteArr [1], byteArr [2], byteArr [3]);
 //				mBorderPaint.Color = mBorderColor;
@@ -360,6 +369,8 @@ namespace ColorPicker
 			RectF rect = mAlphaRect;
 
 			if(BORDER_WIDTH_PX > 0){
+				//TODO: cross check the color
+
 				byte[] byteArr = BitConverter.GetBytes (mBorderColor);
 				mBorderPaint.Color = Color.Argb (byteArr [0], byteArr [1], byteArr [2], byteArr [3]);
 //				mBorderPaint.Color = mBorderColor;
@@ -992,6 +1003,7 @@ namespace ColorPicker
 	 */
 		public void setSliderTrackerColor(int color){
 			mSliderTrackerColor = color;
+			//TODO: set the color
 			byte[] byteArr = BitConverter.GetBytes (mSliderTrackerColor);
 			mHueAlphaTrackerPaint.Color = Color.Argb (byteArr [0], byteArr [1], byteArr [2], byteArr [3]);
 //			mHueAlphaTrackerPaint.Color =  mSliderTrackerColor;		

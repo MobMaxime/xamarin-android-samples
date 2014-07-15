@@ -18,14 +18,14 @@ namespace ColorPicker
 		private ColorPanelView mOldColor;
 		private ColorPanelView mNewColor;
 		 
-		private OnColorChangedListener mListener;
+		private ColorPickerView.OnColorChangedListener mListener;
 
 		public ColorPickerDialog(Context context, int initialColor) : base(context,initialColor) {
 			mListener = null;
 			init(initialColor);
 		}
 
-		public ColorPickerDialog(Context context, int initialColor, OnColorChangedListener listener) : base(context) {
+		public ColorPickerDialog(Context context, int initialColor, ColorPickerView.OnColorChangedListener listener) : base(context) {
 			mListener = listener;
 			init(initialColor);
 		}
@@ -36,12 +36,6 @@ namespace ColorPicker
 			Window.SetFormat(Android.Graphics.Format.Rgb888);
 			setUp(color);
 		}
-
-
-		public interface OnColorChangedListener {
-			void onColorChanged(int color);
-		}
-
 
 		private void setUp(int color) {
 			Boolean isLandscapeLayout = false;
@@ -75,7 +69,8 @@ namespace ColorPicker
 			}
 			else {
 				landscapeLayout.SetPadding(0, 0,(int) Math.Round(mColorPicker.getDrawingOffset()), 0);
-				SetTitle("");
+				string temp = null;
+				SetTitle(temp);
 			}
 
 			mColorPicker.setOnColorChangedListener(this);
@@ -85,6 +80,7 @@ namespace ColorPicker
 
 		}
 		 
+		//TODO : change as per native lib for override
 		 
 		public void onColorChanged(int color) {
 			mNewColor.setColor(color);
