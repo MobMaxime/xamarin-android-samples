@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CarouselViewProject-master\MyFragment.cs">
+    <Files>
+      <File FileName="CarouselViewProject-master\MainActivity.cs" Line="1" Column="1" />
+      <File FileName="CarouselViewProject-master\MyFragment.cs" Line="47" Column="72" />
+      <File FileName="CarouselViewProject-master\MyPagerAdapter.cs" Line="74" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="F:\Ankita\Example\CarouselViewProject-master\CarouselViewProject-master\MainActivity.cs" line="43" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CarouselViewProject-master MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" AndroidDeviceId-Debug="HT267W107865" />
+</Properties>
