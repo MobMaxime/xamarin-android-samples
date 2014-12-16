@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawerArrowDrawable", "SampleDrawerArrowDrawable\DrawerArrowDrawable.csproj", "{E2CDFB13-3655-4395-88A5-129D458FDA6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawerArrowDrawable", "DrawerArrowDrawable\DrawerArrowDrawable.csproj", "{E2CDFB13-3655-4395-88A5-129D458FDA6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
