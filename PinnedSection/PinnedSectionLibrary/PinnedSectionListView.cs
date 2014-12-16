@@ -17,24 +17,19 @@ namespace PinnedSectionLibrary
 {
 	public class PinnedSectionListView : ListView
 	{
-
 		//-- inner classes
-
 		/** List adapter to be implemented for being used with PinnedSectionListView adapter. */
 		public interface PinnedSectionListAdapter : IListAdapter {
 			/** This method shall return 'true' if views of given type has to be pinned. */
 			Boolean isItemViewTypePinned(int viewType);
 		}
-
 		/** Wrapper class for pinned section view and its position in the list. */
 		public class PinnedSection {
 			public View view;
 			public int position;
 			public long id;
 		}
-
 		//-- class fields
-
 		// fields used for handling touch events
 		private Rect mTouchRect = new Rect();
 		private PointF mTouchPoint = new PointF();
@@ -49,46 +44,33 @@ namespace PinnedSectionLibrary
 
 		/** Delegating listener, can be null. */
 		AbsListView.IOnScrollListener mDelegateOnScrollListener;
-
 		/** Shadow for being recycled, can be null. */
 		PinnedSection mRecycleSection;
-
 		/** shadow instance with a pinned view, can be null. */
 		PinnedSection mPinnedSection;
-
 		/** Pinned view Y-translation. We use it to stick pinned view to the next section. */
 		int mTranslateY;
 
 		public class OnScrollListenerImpl : Java.Lang.Object, Android.Widget.AbsListView.IOnScrollListener {
-
 			PinnedSectionListView psl;
-
-
-
 			public OnScrollListenerImpl(PinnedSectionListView psl)  {
 				this.psl = psl;
 			}
-
 			public void OnScrollStateChanged(AbsListView view, int scrollState) {
 				if (psl.mDelegateOnScrollListener != null) { // delegate
 					psl.mDelegateOnScrollListener.OnScrollStateChanged(view, (ScrollState) scrollState);
 				}
 			}
-
 			public void OnScrollStateChanged (AbsListView view, ScrollState scrollState) {
 				if (psl.mDelegateOnScrollListener != null) { // delegate
 					psl.mDelegateOnScrollListener.OnScrollStateChanged(view, scrollState);
 				}
 			}
-
 			public void OnScroll (AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-
 				Console.WriteLine ("on scrolll event");
-
 				if (psl.mDelegateOnScrollListener != null) { // delegate
 					psl.mDelegateOnScrollListener.OnScroll(view, firstVisibleItem, visibleItemCount, totalItemCount);
 				}
-
 				// get expected adapter or fail fast
 				IListAdapter adapter = psl.Adapter;
 				if (adapter == null || visibleItemCount == 0) return; // nothing to do
@@ -115,9 +97,7 @@ namespace PinnedSectionLibrary
 			}
 
 		}	
-
 		/** Default change observer. */
-
 		private class DataSetObserverImpl : DataSetObserver {
 			PinnedSectionListView psl;
 			public DataSetObserverImpl(PinnedSectionListView psl) {
@@ -127,38 +107,27 @@ namespace PinnedSectionLibrary
 			{
 				psl.recreatePinnedShadow();
 			}
-
 			public override void OnInvalidated ()
 			{
 				psl.recreatePinnedShadow();
 			}
 		}
-
 		private DataSetObserver mDataSetObserver;
 		private IOnScrollListener mOnScrollListener;
-
 		//-- constructors
-
-
-
 		public PinnedSectionListView(Context context) : base(context) {
 			initView();
 		}
-
 		public PinnedSectionListView(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) {
 			initView();
 		}
-
 		public PinnedSectionListView(Context context, IAttributeSet attrs) : base(context, attrs) {
 			initView();
 		}
-
 		public PinnedSectionListView(Context context, IAttributeSet attrs, int defStyle) : base(context, attrs, defStyle) {
 			initView();
 		}
-
 		private void initView() {
-
 			mDataSetObserver = new DataSetObserverImpl(this);
 			mOnScrollListener = new OnScrollListenerImpl(this);
 
@@ -166,9 +135,7 @@ namespace PinnedSectionLibrary
 			mTouchSlop = ViewConfiguration.Get (Context).ScaledTouchSlop;
 			initShadow(true);
 		}
-
 		//-- public API methods
-
 		public void setShadowVisible(Boolean visible) {
 			initShadow(visible);
 			if (mPinnedSection != null) {
@@ -176,9 +143,7 @@ namespace PinnedSectionLibrary
 				Invalidate(v.Left, v.Top, v.Right, v.Bottom + mShadowHeight);
 			}
 		}
-
 		//-- pinned section drawing methods
-
 		public void initShadow(Boolean visible) {
 			if (visible) {
 				if (mShadowDrawable == null) {
@@ -193,39 +158,44 @@ namespace PinnedSectionLibrary
 				}
 			}
 		}
-
 		/** Create shadow wrapper with a pinned view for a view at given position */
 		void createPinnedShadow(int position) {
-
 			// try to recycle shadow
 			PinnedSection pinnedShadow = mRecycleSection;
 			mRecycleSection = null;
-
 			// create new shadow, if needed
 			if (pinnedShadow == null) pinnedShadow = new PinnedSection();
 			// request new view using recycled view, if such
 			View pinnedView = Adapter.GetView(position, pinnedShadow.view, this);
-
 			// read layout parameters
 			LayoutParams layoutParams = (LayoutParams) pinnedView.LayoutParameters;
 			if (layoutParams == null) { // create default layout params
 				layoutParams = new LayoutParams(LayoutParams.MatchParent, LayoutParams.WrapContent);
+				//layoutParams = (LayoutParams) GenerateDefaultLayoutParams (); //generateDefaultLayoutParams();
+				layoutParams = new LayoutParams (GenerateDefaultLayoutParams ());
+				pinnedView.LayoutParameters = layoutParams;
+
 			}
 
 			MeasureSpecMode heightMode = MeasureSpec.GetMode(layoutParams.Height);
 			int heightSize = MeasureSpec.GetSize(layoutParams.Height);
-
 			if (heightMode == MeasureSpecMode.Unspecified) heightMode = MeasureSpecMode.Exactly;
-
 			int maxHeight = Height - ListPaddingTop - ListPaddingBottom;
 			if (heightSize > maxHeight) heightSize = maxHeight;
-
+			//---------------------------------------------
 			// measure & layout
-			int ws = MeasureSpec.MakeMeasureSpec(Width - ListPaddingLeft - ListPaddingRight, MeasureSpecMode.Exactly);
-			int hs = MeasureSpec.MakeMeasureSpec(heightSize, heightMode);
-			pinnedView.Measure(ws, hs);
-			pinnedView.Layout(0, 0, pinnedView.MeasuredWidth, pinnedView.MeasuredHeight);
+			try{
+				int ws = MeasureSpec.MakeMeasureSpec(Width - ListPaddingLeft - ListPaddingRight, MeasureSpecMode.Exactly);
+				//int hs = MeasureSpec.MakeMeasureSpec(heightSize, heightMode);
+				int myNegInt = System.Math.Abs(heightSize) * (-1);
+				int hs = MeasureSpec.MakeMeasureSpec(heightSize, heightMode);
+				pinnedView.Measure(Convert.ToInt32(ws), Convert.ToInt32(hs));
+			}
+			catch(Exception ex){
+				System.Console.WriteLine (ex.Message.ToString());
+			}
 			mTranslateY = 0;
+			pinnedView.Layout(0, 0, pinnedView.MeasuredWidth, pinnedView.MeasuredHeight);
 
 			// initialize pinned shadow
 			pinnedShadow.view = pinnedView;
@@ -235,7 +205,6 @@ namespace PinnedSectionLibrary
 			// store pinned shadow
 			mPinnedSection = pinnedShadow;
 		}
-
 		/** Destroy shadow wrapper for currently pinned view */
 		void destroyPinnedShadow() {
 			if (mPinnedSection != null) {
@@ -244,23 +213,19 @@ namespace PinnedSectionLibrary
 				mPinnedSection = null;
 			}
 		}
-
 		/** Makes sure we have an actual pinned shadow for given position. */
 		void ensureShadowForPosition(int sectionPosition, int firstVisibleItem, int visibleItemCount) {
 			if (visibleItemCount < 2) { // no need for creating shadow at all, we have a single visible item
 				destroyPinnedShadow();
 				return;
 			}
-
 			if (mPinnedSection != null
 				&& mPinnedSection.position != sectionPosition) { // invalidate shadow, if required
 				destroyPinnedShadow();
 			}
-
 			if (mPinnedSection == null) { // create shadow, if empty
 				createPinnedShadow(sectionPosition);
 			}
-
 			// align shadow according to next section position, if needed
 			int nextPosition = sectionPosition + 1;
 			if (nextPosition < Count) {
@@ -283,10 +248,7 @@ namespace PinnedSectionLibrary
 					mSectionsDistanceY = Java.Lang.Integer.MaxValue;
 				}
 			}
-
 		}
-
-
 		int findFirstVisibleSectionPosition(int firstVisibleItem, int visibleItemCount) {
 			Android.Widget.IListAdapter adapter = Adapter;
 			for (int childIndex = 0; childIndex < visibleItemCount; childIndex++) {
@@ -296,8 +258,6 @@ namespace PinnedSectionLibrary
 			}
 			return -1;
 		}
-
-
 		int findCurrentSectionPosition(int fromPosition) {
 			IListAdapter adapter = Adapter;
 
@@ -320,7 +280,6 @@ namespace PinnedSectionLibrary
 			}
 			return -1; // no candidate found
 		}
-
 		void recreatePinnedShadow() {
 			destroyPinnedShadow();
 			IListAdapter adapter = Adapter;
@@ -332,21 +291,17 @@ namespace PinnedSectionLibrary
 					firstVisiblePosition, LastVisiblePosition - firstVisiblePosition);
 			}
 		}
-
 		public override void SetOnScrollListener (IOnScrollListener l)
 		{
-
 			if (l == mOnScrollListener) {
 				base.SetOnScrollListener (l);
 			} else {
 				mDelegateOnScrollListener = (OnScrollListenerImpl)l;
 			}
 		}
-
 		public override void OnRestoreInstanceState (IParcelable state)
 		{
 			base.OnRestoreInstanceState (state);
-
 			Post( new Action(() => {
 				recreatePinnedShadow();
 			}));
@@ -375,7 +330,6 @@ namespace PinnedSectionLibrary
 			base.SetAdapter (adapter);
 
 		}
-
 		protected override void OnLayout (bool changed, int left, int top, int right, int bottom)
 		{
 			base.OnLayout (changed, left, top, right, bottom);
@@ -387,18 +341,15 @@ namespace PinnedSectionLibrary
 				}
 			}
 		}
-
 		protected override void DispatchDraw (Canvas canvas)
 		{
 			base.DispatchDraw (canvas);
 
 			if (mPinnedSection != null) {
-
 				// prepare variables
 				int pLeft = ListPaddingLeft;
 				int pTop = ListPaddingTop;
 				View view = mPinnedSection.view;
-
 				// draw child
 				canvas.Save();
 
@@ -416,17 +367,14 @@ namespace PinnedSectionLibrary
 						mPinnedSection.view.Bottom + mShadowHeight);
 					mShadowDrawable.Draw(canvas);
 				}
-
 				canvas.Restore();
 			}
 		}
-
 		public override bool DispatchTouchEvent (MotionEvent ev)
 		{
 			float x = ev.GetX();
 			float y = ev.GetY();
 			MotionEventActions action = ev.Action;
-
 			if (action == MotionEventActions.Down
 				&& mTouchTarget == null
 				&& mPinnedSection != null
@@ -440,42 +388,34 @@ namespace PinnedSectionLibrary
 				// copy down event for eventually be used later
 				mDownEvent = MotionEvent.Obtain(ev);
 			}
-
 			if (mTouchTarget != null) {
 				if (isPinnedViewTouched(mTouchTarget, x, y)) { // forward event to pinned view
 					mTouchTarget.DispatchTouchEvent(ev);
 				}
-
 				if (action == MotionEventActions.Up) { // perform onClick on pinned view
 					base.DispatchTouchEvent(ev);
 					performPinnedItemClick();
 					clearTouchTarget();
-
 				} else if (action == MotionEventActions.Cancel) { // cancel
 					clearTouchTarget();
 
 				} else if (action == MotionEventActions.Move) {
 					if (Math.Abs(y - mTouchPoint.Y) > mTouchSlop) {
-
 						// cancel sequence on touch target
 						MotionEvent events = MotionEvent.Obtain(ev);
 						events.Action = MotionEventActions.Cancel;
 						mTouchTarget.DispatchTouchEvent(events);
 						events.Recycle();
-
 						// provide correct sequence to super class for further handling
 						base.DispatchTouchEvent(mDownEvent);
 						base.DispatchTouchEvent(ev);
 						clearTouchTarget();
 					}
 				}
-
 				return true;
 			}
-
 			return base.DispatchTouchEvent (ev);
 		}
-
 		private Boolean isPinnedViewTouched(View view, float x, float y) {
 			view.GetHitRect(mTouchRect);
 
@@ -488,7 +428,6 @@ namespace PinnedSectionLibrary
 			mTouchRect.Right -= PaddingRight;
 			return mTouchRect.Contains((int)x, (int)y);
 		}
-
 		private void clearTouchTarget() {
 			mTouchTarget = null;
 			if (mDownEvent != null) {
@@ -496,7 +435,6 @@ namespace PinnedSectionLibrary
 				mDownEvent = null;
 			}
 		}
-
 		private Boolean performPinnedItemClick() {
 			if (mPinnedSection == null) return false;
 
@@ -512,15 +450,11 @@ namespace PinnedSectionLibrary
 			}
 			return false;
 		}
-
 		public static Boolean isItemViewTypePinned(IListAdapter adapter, int viewType) {
 			if (adapter.GetType() ==  (new HeaderViewListAdapter(null,null, null)).GetType()) {
 				adapter = ((HeaderViewListAdapter)adapter).WrappedAdapter;
 			}
 			return ((PinnedSectionListAdapter) adapter).isItemViewTypePinned(viewType);
 		}
-
 	}
-
 }
-

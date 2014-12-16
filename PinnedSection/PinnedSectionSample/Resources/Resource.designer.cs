@@ -73,9 +73,6 @@ namespace PinnedSectionSample
 			// aapt resource value: 0x7f020000
 			public const int Icon = 2130837504;
 			
-			// aapt resource value: 0x7f020001
-			public const int monoandroidsplash = 2130837505;
-			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -89,20 +86,20 @@ namespace PinnedSectionSample
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080002
-			public const int action_addpadding = 2131230722;
+			// aapt resource value: 0x7f070002
+			public const int action_addpadding = 2131165186;
 			
-			// aapt resource value: 0x7f080001
-			public const int action_fastscroll = 2131230721;
+			// aapt resource value: 0x7f070001
+			public const int action_fastscroll = 2131165185;
 			
-			// aapt resource value: 0x7f080004
-			public const int action_showHeaderAndFooter = 2131230724;
+			// aapt resource value: 0x7f070004
+			public const int action_showHeaderAndFooter = 2131165188;
 			
-			// aapt resource value: 0x7f080003
-			public const int action_showShadow = 2131230723;
+			// aapt resource value: 0x7f070003
+			public const int action_showShadow = 2131165187;
 			
-			// aapt resource value: 0x7f080000
-			public const int ll = 2131230720;
+			// aapt resource value: 0x7f070000
+			public const int ll = 2131165184;
 			
 			static Id()
 			{
@@ -133,8 +130,8 @@ namespace PinnedSectionSample
 		public partial class Menu
 		{
 			
-			// aapt resource value: 0x7f070000
-			public const int main = 2131165184;
+			// aapt resource value: 0x7f060000
+			public const int main = 2131099648;
 			
 			static Menu()
 			{
@@ -173,22 +170,6 @@ namespace PinnedSectionSample
 			}
 			
 			private String()
-			{
-			}
-		}
-		
-		public partial class Style
-		{
-			
-			// aapt resource value: 0x7f060000
-			public const int Mono_Android_Theme_Splash = 2131099648;
-			
-			static Style()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Style()
 			{
 			}
 		}
