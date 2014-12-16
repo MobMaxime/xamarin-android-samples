@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CropImageSample", "CropImageSample\CropImageSample.csproj", "{DC4D4199-746B-45BB-8DC1-F76E780C5FB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC4D4199-746B-45BB-8DC1-F76E780C5FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC4D4199-746B-45BB-8DC1-F76E780C5FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC4D4199-746B-45BB-8DC1-F76E780C5FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC4D4199-746B-45BB-8DC1-F76E780C5FB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = CropImageSample\CropImageSample.csproj
+	EndGlobalSection
+EndGlobal
