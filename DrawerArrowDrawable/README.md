@@ -9,7 +9,7 @@ Thanks to
 ---------
 * [Chris Renke](https://github.com/ChrisRenke) - The creator of [DrawerArrowDrawable](https://github.com/ChrisRenke/DrawerArrowDrawable)
 
-![](https://github.com/MobMaxime/DrawerArrowDrawable/raw/master/inline_drawerarrowdrawable_sample.gif)
+![](https://github.com/MobMaxime/xamarin-android-samples/blob/master/DrawerArrowDrawable/inline_drawerarrowdrawable_sample.gif)
 
 License
 -------
