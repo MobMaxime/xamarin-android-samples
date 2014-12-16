@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, Click Me!</string>
+	<string name="app_name">SampleDrawerArrowDrawable</string>
+	<string name="content_hint">Content</string>
+  	<string name="drawer_hint">Drawer</string>
+ 	<string name="rounded">See Rounded</string>
+  	<string name="squared">See Squared</string>
+</resources>
