@@ -10,8 +10,9 @@ Thanks to
 * [Dmytro Danylyk](https://github.com/dmytrodanylyk) - The creator of [android-process-button](https://github.com/dmytrodanylyk/android-process-button)
 
 ![](screenshots/sample1.gif)
+![](screenshots/sample1_small2.gif) 
 ![](screenshots/sample2.gif)
-![](screenshots/sample3.gif)
+![](screenshots/sample3.gif) 
 
 License
 -------
