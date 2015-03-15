@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StickyListHeaders", "StickyListHeaders.csproj", "{2A61E0CD-8705-4232-BA51-2B98433A587A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamDroid.StickyListHeaders", "..\..\Library\XamDroid.StickyListHeaders\XamDroid.StickyListHeaders.csproj", "{362BA929-486C-4D31-80B3-346CEF3DFD90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A61E0CD-8705-4232-BA51-2B98433A587A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A61E0CD-8705-4232-BA51-2B98433A587A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A61E0CD-8705-4232-BA51-2B98433A587A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2A61E0CD-8705-4232-BA51-2B98433A587A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A61E0CD-8705-4232-BA51-2B98433A587A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A61E0CD-8705-4232-BA51-2B98433A587A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{362BA929-486C-4D31-80B3-346CEF3DFD90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{362BA929-486C-4D31-80B3-346CEF3DFD90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{362BA929-486C-4D31-80B3-346CEF3DFD90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{362BA929-486C-4D31-80B3-346CEF3DFD90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

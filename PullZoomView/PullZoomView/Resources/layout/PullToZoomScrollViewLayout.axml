@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <librarypullzoomview.PullToZoomScrollViewEx
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        custom:zoomView="@layout/profile_zoom_view"
+        custom:contentView="@layout/profile_content_view"
+        custom:headerView="@layout/profile_head_view" />
+</LinearLayout>

@@ -1,0 +1,13 @@
+﻿<Properties StartupItem="FlabbyListView\FlabbyListView.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.192.168.56.101:5555" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\mobmaxime\Downloads\FlabbyListView\FlabbyListView\LibraryFlabbyListView\FlabbyLayout.cs">
+    <Files>
+      <File FileName="c:\Users\mobmaxime\Downloads\FlabbyListView\FlabbyListView\LibraryFlabbyListView\FlabbyLayout.cs" Line="35" Column="35" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.FlabbyListView MonoForAntroid.PreferredDevice="Nexus 4" />
+</Properties>

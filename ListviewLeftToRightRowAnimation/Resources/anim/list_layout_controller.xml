@@ -1,0 +1,3 @@
+﻿<layoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
+ android:delay="60%"
+ android:animation="@anim/left_in" />

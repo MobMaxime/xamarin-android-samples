@@ -1,0 +1,19 @@
+﻿<Properties StartupItem="SlideDateTimePicker\SlideDateTimePicker.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.192.168.56.101:5555" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="LibrarySlideDateTimePicker\SlidingTabLayout.cs">
+    <Files>
+      <File FileName="SlideDateTimePicker\Properties\AndroidManifest.xml" Line="1" Column="1" />
+      <File FileName="LibrarySlideDateTimePicker\TimeFragment.cs" Line="1" Column="1" />
+      <File FileName="LibrarySlideDateTimePicker\SlidingTabLayout.cs" Line="4" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="D:\JAYA\Samples\SlideDateTimePicker\SlideDateTimePicker\MainActivity.cs" line="28" column="1" />
+      <Breakpoint file="D:\JAYA\Samples\SlideDateTimePicker\LibrarySlideDateTimePicker\SlideDateTimePicker.cs" line="33" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.LibrarySlideDateTimePicker AndroidDesignerPreferredDevice="Nexus 4" />
+  <MonoDevelop.Ide.ItemProperties.SlideDateTimePicker AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>

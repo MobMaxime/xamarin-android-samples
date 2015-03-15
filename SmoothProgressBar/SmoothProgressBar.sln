@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmoothProgressBar", "SmoothProgressBar\SmoothProgressBar.csproj", "{F4D0F5CE-D8CB-492F-B1BF-F045CCD8B7C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castorflex.Android.SmoothProgressBar", "Castorflex.Android.SmoothProgressBar\Castorflex.Android.SmoothProgressBar.csproj", "{2FE56052-E9B3-4E28-972F-475987E72873}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FE56052-E9B3-4E28-972F-475987E72873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FE56052-E9B3-4E28-972F-475987E72873}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FE56052-E9B3-4E28-972F-475987E72873}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FE56052-E9B3-4E28-972F-475987E72873}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4D0F5CE-D8CB-492F-B1BF-F045CCD8B7C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4D0F5CE-D8CB-492F-B1BF-F045CCD8B7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4D0F5CE-D8CB-492F-B1BF-F045CCD8B7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4D0F5CE-D8CB-492F-B1BF-F045CCD8B7C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

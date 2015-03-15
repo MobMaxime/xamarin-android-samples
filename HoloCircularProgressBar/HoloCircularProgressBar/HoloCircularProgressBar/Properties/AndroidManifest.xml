@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="HoloCircularProgressBar.HoloCircularProgressBar">
+	<uses-sdk />
+	<application android:label="HoloCircularProgressBar" android:theme="@style/AppTheme"></application>
+</manifest>

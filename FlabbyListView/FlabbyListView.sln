@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlabbyListView", "FlabbyListView\FlabbyListView.csproj", "{CAD416E3-0EEB-4746-80E8-7BA53D853EBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryFlabbyListView", "LibraryFlabbyListView\LibraryFlabbyListView.csproj", "{8F9506D6-5D90-4022-8027-0481D1D1F9A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F9506D6-5D90-4022-8027-0481D1D1F9A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F9506D6-5D90-4022-8027-0481D1D1F9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F9506D6-5D90-4022-8027-0481D1D1F9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F9506D6-5D90-4022-8027-0481D1D1F9A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD416E3-0EEB-4746-80E8-7BA53D853EBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD416E3-0EEB-4746-80E8-7BA53D853EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD416E3-0EEB-4746-80E8-7BA53D853EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD416E3-0EEB-4746-80E8-7BA53D853EBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = FlabbyListView\FlabbyListView.csproj
+	EndGlobalSection
+EndGlobal

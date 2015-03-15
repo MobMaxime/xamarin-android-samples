@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PullZoomView", "PullZoomView\PullZoomView.csproj", "{F5A27427-F083-49C1-B3A1-C6AC1C31799C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryPullZoomView", "LibraryPullZoomView\LibraryPullZoomView.csproj", "{587C474C-5626-4B7D-8BDD-23029187B0D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{587C474C-5626-4B7D-8BDD-23029187B0D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{587C474C-5626-4B7D-8BDD-23029187B0D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{587C474C-5626-4B7D-8BDD-23029187B0D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{587C474C-5626-4B7D-8BDD-23029187B0D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A27427-F083-49C1-B3A1-C6AC1C31799C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A27427-F083-49C1-B3A1-C6AC1C31799C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A27427-F083-49C1-B3A1-C6AC1C31799C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A27427-F083-49C1-B3A1-C6AC1C31799C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

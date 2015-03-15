@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Click Me!</string>
+    <string name="app_name">XamDroid.StickyListHeaders</string>
+  <string name="header_text">Header: Follow: @JamesMontemagno</string>
+  <string name="footer_text">Footer: Follow: @JamesMontemagno</string>
+</resources>

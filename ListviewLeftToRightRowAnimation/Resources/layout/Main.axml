@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#3F75B3"
+        android:id="@+id/rltBar"
+        style="@android:style/ButtonBar">
+        <Button
+            android:id="@+id/btnCategory"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:text="Button"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true" />
+        <TextView
+            android:id="@+id/txtCategory"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All Categories"
+            android:textColor="#FFFFFFFF"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp" />
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/listcategory"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

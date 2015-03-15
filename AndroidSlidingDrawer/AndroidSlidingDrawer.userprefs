@@ -1,9 +1,9 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="AnimationDrawer/MultiDirectionSlidingDrawer.cs">
+﻿<Properties StartupItem="AnimationDrawer\AnimationDrawer.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.192.168.56.101:5555" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="AnimationDrawer\MultiDirectionSlidingDrawer.cs">
     <Files>
-      <File FileName="AnimationDrawer/MainActivity.cs" Line="38" Column="8" />
-      <File FileName="AnimationDrawer/MultiDirectionSlidingDrawer.cs" Line="1031" Column="3" />
+      <File FileName="AnimationDrawer\MainActivity.cs" Line="1" Column="1" />
+      <File FileName="AnimationDrawer\MultiDirectionSlidingDrawer.cs" Line="3" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

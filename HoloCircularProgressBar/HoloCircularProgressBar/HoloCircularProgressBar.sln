@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoloCircularProgressBar", "HoloCircularProgressBar\HoloCircularProgressBar.csproj", "{92CEF07C-26A0-46B9-AD42-54D01F206BE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryHoloCircularProgressBar", "LibraryHoloCircularProgressBar\LibraryHoloCircularProgressBar.csproj", "{CD351491-740F-4248-932D-9F64C765BFB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92CEF07C-26A0-46B9-AD42-54D01F206BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92CEF07C-26A0-46B9-AD42-54D01F206BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92CEF07C-26A0-46B9-AD42-54D01F206BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92CEF07C-26A0-46B9-AD42-54D01F206BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD351491-740F-4248-932D-9F64C765BFB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD351491-740F-4248-932D-9F64C765BFB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD351491-740F-4248-932D-9F64C765BFB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD351491-740F-4248-932D-9F64C765BFB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

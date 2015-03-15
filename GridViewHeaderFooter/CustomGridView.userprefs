@@ -1,0 +1,35 @@
+﻿<Properties StartupItem="CustomGridView\CustomGridView.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.192.168.56.101:5555" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CustomGridView\GridViewWithHeaderAndFooter.cs">
+    <Files>
+      <File FileName="CustomGridView\GridViewWithHeaderAndFooter.cs" Line="6" Column="6" />
+      <File FileName="CustomGridView\MainActivity.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="420" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="366" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="392" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="328" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="279" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="275" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="270" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="252" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="234" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="222" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="209" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="189" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="174" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="178" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="146" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="111" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="63" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="369" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="380" column="1" />
+      <Breakpoint enabled="false" file="C:\Users\Mobmaxime\Desktop\CustomGridView\CustomGridView\GridViewWithHeaderAndFooter.cs" line="347" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CustomGridView MonoForAntroid.PreferredDevice="Nexus 4" />
+</Properties>
