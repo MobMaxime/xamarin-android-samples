@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="Calendar_Android/Calendar_Android.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.AndroidWearSquare" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../Documents/gitProject/xamarin/koprojaya_clone/koprojaya/Resources/Resource.designer.cs">
+    <Files>
+      <File FileName="Calendar_Android/Activity/MainActivity.cs" Line="123" Column="1" />
+      <File FileName="Calendar_Android/Activity/CalendarAdapter.cs" Line="54" Column="4" />
+      <File FileName="../../Documents/gitProject/xamarin/koprojaya_clone/koprojaya/Resources/Resource.designer.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../Documents/gitProject/xamarin/BusinessApp/BusinessApp_Core/HelperClasses/RssFeeds.cs" line="153" offsetX="638" offsetY="2175" expression="postObject" liveUpdate="False" />
+    <Watch file="../../Documents/gitProject/xamarin/EmergencyCareApp/EmergencyCareApp/EmergencyCare_Core/HelperClasses/RssFeeds.cs" line="215" offsetX="1491" offsetY="3210" expression="&quot;http://kapil.swiftexperts.in/push/register.php?name=dharmik&amp;email=dharmikisback@gmail.com&amp;regId&quot; + deviceToken" liveUpdate="True" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.ItemProperties.Calendar__Android AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>
