@@ -1,0 +1,14 @@
+﻿<Properties StartupItem="sunanimation/sunanimation.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.0123456789ABCDEF" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="sunanimation/Properties/AndroidManifest.xml">
+    <Files>
+      <File FileName="sunanimation/Activity/MainActivity.cs" Line="20" Column="4" />
+      <File FileName="sunanimation/Properties/AndroidManifest.xml" Line="6" Column="12" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.sunanimation AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>
