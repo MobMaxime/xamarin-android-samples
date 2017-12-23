@@ -17,7 +17,7 @@ using Android.Content.Res;
 
 namespace AnimationDrawer
 {
-	public class MultiDirectionSlidingDrawer : ViewGroup
+	public class MultiDirectionSlidingDrawer : ViewGroup, View.IOnClickListener
 	{
 		public static  int				ORIENTATION_RTL		= 0;
 		public static  int				ORIENTATION_BTT		= 1;
@@ -198,8 +198,9 @@ namespace AnimationDrawer
 			if ( mHandle == null ) { 
 				throw new Java.Lang.IllegalArgumentException( "The handle attribute is must refer to an" + " existing child." ); 
 			}
-			mHandle.SetOnClickListener ((IOnClickListener)new DrawerToggler (this));
-
+			//mHandle.SetOnClickListener ((IOnClickListener)new DrawerToggler (this));
+			mHandle.SetOnClickListener (this);
+			
 //			mHandle.Click += (sender, e) => {
 //				if ( mLocked ) { return; }
 //	
@@ -1011,7 +1012,18 @@ namespace AnimationDrawer
 		{
 			return mTracking || mAnimating;
 		}
-		 
+
+		public void OnClick(View v)
+		{
+			if ( mLocked ) { return; }
+
+				if ( mAnimateOnClick ) {
+					animateToggle();
+				} else {
+					toggle();
+				}
+		}
+
 		private class SlidingHandler : Android.OS.Handler{
  			MultiDirectionSlidingDrawer MDS;
 			public SlidingHandler(MultiDirectionSlidingDrawer mds) {
